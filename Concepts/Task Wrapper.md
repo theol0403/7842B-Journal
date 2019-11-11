@@ -1,8 +1,8 @@
 # Task Wrapper
 
-If a class requires a task as a member, it causes some problems. A `pros::Task` requires a callback function to run, but due to some limitations in c++, the address of that function needs to be known in *compile-time*. This means that the task callback needs to be `static` , which means that it does not belong to the class instance and it can't access class members. To fix this, a pattern named **trampoline** is used. Trampoline is the act of passing a opaque pointer to the class object *through the task* to be recieved by the static function, having the static function cast the pointer to the correct class type, and calling a member function to excecute the task.
+If a class requires a task as a member, it causes some problems. A `pros::Task` requires a callback function to run, but due to some limitations in c++, the address of that function needs to be known in *compile-time*. This means that the task callback needs to be `static` , which means that it does not belong to the class instance and it can't access class members. To fix this, a pattern named **trampoline** is used. Trampoline is the act of passing a opaque pointer to the class object *through the task* to be received by the static function, having the static function cast the pointer to the correct class type, and calling a member function to execute the task.
 
-Since implementing a trampoline requires a solid amount of boilerplate, I have written an abstract task wrapper that does this for me. To be able to run using unit tests and CI, I am using okapilib's `CrossPlatformTask` as the task object.
+Since implementing a trampoline requires a solid amount of boilerplate, I have written an abstract task wrapper that does this for me. To be able to run using unit tests and CI, I am using OkapiLib's `CrossPlatformTask` as the task object.
 
 Note how the `this` pointer is passed when task is constructed:
 
@@ -10,7 +10,7 @@ Note how the `this` pointer is passed when task is constructed:
 task = std::make_unique<CrossplatformThread>(trampoline, this, iname.c_str());
 ```
 
-Then, the pointer is casted by the trampoline and a virtual member `loop()` is called, which is then resolved by dynamic binding:
+Then, the pointer is cast by the trampoline and a virtual member `loop()` is called, which is then resolved by dynamic binding:
 
 ```cpp
 void TaskWrapper::trampoline(void* iparam) {
@@ -58,8 +58,6 @@ private:
   std::unique_ptr<CrossplatformThread> task {nullptr};
 };
 ```
-
-Here is the implementation for the wrapper:
 
 ```cpp
 TaskWrapper::TaskWrapper(const std::shared_ptr<Logger>& ilogger) : logger(ilogger) {}
