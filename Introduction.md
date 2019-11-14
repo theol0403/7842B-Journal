@@ -8,6 +8,7 @@ Hello, I'm Theo, the programmer for team 7842F. This will be my journal where I 
 
 Daily logs will be kept in `Logs/`.
 Concepts and ideas will be kept in `Concepts/`.
+lib7842 development logs will be kept in `lib7842/`.
 Code dumps will be kept in `Code/`.
 
 
