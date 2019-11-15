@@ -39,3 +39,5 @@ With this math, I can say:
 - Drive to Point while facing Angle
 - Drive Distance while facing Angle
 
+Read our autonomous programs for a demonstration of this functionality.
+
