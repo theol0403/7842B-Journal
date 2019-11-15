@@ -1,6 +1,6 @@
 # Journals Todo:
 
-- [x] Odometry tracking
+- [ ] Odometry tracking
 - [ ] Motion algorithms
 - [ ] XDrive math
 - [ ] lib7842
