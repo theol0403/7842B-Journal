@@ -2,17 +2,17 @@
 
 **Programming**
 
-- [ ] Claw and lift calibration - in progress
+- [x] Claw and lift calibration - in progress
 - [x] Button for claw calibration and deploy - in progress
 - [x] Motor power graph
 - [x] Heat warning
-- [ ] Make blocking autonomous functions - in progress
+- [x] Make blocking autonomous functions - in progress
 
 **Robot**
 
-- [ ] Switch lift controls
+- [x] Switch lift controls
 - [ ] Try lift braking and tune PID
-- [ ] Slow down claw
+- [x] Slow down claw
 
 **Building**
 
