@@ -4,7 +4,7 @@ A statemachine is an elegant way of programming a subsystem, and makes it easy t
 
 However, implementing a statemachine requires a substantial amount of boilerplate, both to set up the task but also to set up the setter and getter functions. This is why I wrote an abstract `StateMachine` wrapper that reduces said boilerplate. `StateMachine` inherits task functionality from [Task Wrapper](Task Wrapper).
 
-Here is the class, which accepts the enum type as a template paramiter:
+Here is the class, which accepts the enum type as a template parameter:
 
 ```cpp
 /**
