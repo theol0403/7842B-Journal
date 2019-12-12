@@ -1,6 +1,6 @@
 # Far Auton
 
-This will be our primary auton. It will allow us score three points, and have a cube in a tower. It is designed to compliment a traybot. Here is the code:
+This will be our primary auton for shawnigan. It will allow us score three points, and have a cube in a tower. It is designed to compliment a traybot. Here is the code:
 
 ```cpp
 void farBlueAuton() {
