@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /concepts/odom/
+title: Odom Controller
+---
 # Odom Controller
 
 Here is the API (header file) for `OdomController`, which belongs to lib7842.

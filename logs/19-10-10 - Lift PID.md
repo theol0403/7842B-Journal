@@ -1,6 +1,6 @@
 # 11-10-2019 - Lift PID
 
-Today I worked on the lift PID. I had to find a way to stabilise the sides.
+Today I worked on the lift PID. I had to find a way to stabilize the sides.
 
 Currently, here is the driver control mapping:
 
@@ -78,6 +78,5 @@ case liftStates::bottom:
   lift[0]->moveVoltage(pid[0]->step(getPosition()[0]) * 12000);
   lift[1]->moveVoltage(pid[1]->step(getPosition()[1]) * 12000);
   break;
-}
 ```
 

@@ -1,3 +1,9 @@
+---
+layout: default
+permalink: /concepts/statemachine/
+title: State Machine
+---
+
 # Statemachine Wrapper
 
 A statemachine is an elegant way of programming a subsystem, and makes it easy to control both in driver control and autonomous. A statemachine is usually implemented using an enum containing a list of states, and then a switch statement in a separate thread that implements each state.
