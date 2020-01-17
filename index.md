@@ -8,7 +8,6 @@ Hello, I'm Theo, the programmer for team 7842F. This is my journal where I will 
 
 <img src="assets/images/7842FLogo-632x356-600x356.png" width="300" height="178" />
 
-
 **Journal Layout:**
 
 Daily logs will be kept in `Logs/`.

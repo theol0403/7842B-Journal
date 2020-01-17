@@ -2,3 +2,13 @@ a {
 	color: #ff7f00;
 	text-decoration: none;
 }
+
+::selection {
+	color: #fff;
+	background: #ff7f00;
+}
+
+a:not([class]):hover {
+	background-image: linear-gradient(rgba(255, 127, 0, 1) 0%, rgba(255, 127, 0, 1) 100%);
+	background-size: 1px 1px;
+}
