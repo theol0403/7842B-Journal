@@ -18,20 +18,30 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: 7842F Journal
+email: theol0403@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  7842F Programming Journal, Showcase, and Documentation 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  theol0403
 
 # Build settings
 theme: just-the-docs
 plugins:
+
+# Just the docs
+color_scheme: "dark"
+search_enabled: true
+search_tokenizer_separator: /[\s/]+/
+heading_anchors: true
+
+footer_content: "Copyright &copy; 2019-2020 Theo Lemay - 7842F"
+
+aux_links:
+  "lib7842": "//github.com/theol0403/lib7842"
+  "Tower": "//github.com/theol0403/7842F-Tower-Code"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
