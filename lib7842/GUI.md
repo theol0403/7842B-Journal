@@ -1,7 +1,8 @@
 ---
 layout: default
-permalink: /concepts/gui/
+parent: lib7842
 title: GUI
+nav_order: 1
 ---
 
 # Robot GUI

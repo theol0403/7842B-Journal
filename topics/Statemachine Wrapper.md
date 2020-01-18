@@ -1,7 +1,8 @@
 ---
 layout: default
-permalink: /concepts/statemachine/
+parent: Topics
 title: State Machine
+nav_order: 3
 ---
 
 # Statemachine Wrapper

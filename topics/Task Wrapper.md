@@ -1,7 +1,8 @@
 ---
 layout: default
-permalink: /concepts/task/
+parent: Topics
 title: Task Wrapper
+nav_order: 2
 ---
 
 # Task Wrapper

@@ -1,7 +1,8 @@
 ---
 layout: default
-permalink: /concepts/odom/
+parent: Code
 title: Odom Controller
+nav_order: 1
 ---
 # Odom Controller
 
