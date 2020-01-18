@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Code
+parent: Demos
 title: Odom Controller
 nav_order: 1
 ---
