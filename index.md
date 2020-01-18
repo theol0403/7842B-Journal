@@ -13,7 +13,7 @@ Hello, I'm Theo, the programmer for team 7842F. This is my journal where I will 
 
 ---
 
-**Journal Layout:**
+## Journal Layout:
 
 Daily logs will be kept in `Logs/`.
 Concepts and ideas will be kept in `Concepts/`.

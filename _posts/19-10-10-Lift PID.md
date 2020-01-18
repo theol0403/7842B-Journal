@@ -1,4 +1,10 @@
-# 11-10-2019 - Lift PID
+---
+layout: post
+title: "Lift PID"
+date: 2019-10-10
+---
+
+# Lift PID
 
 Today I worked on the lift PID. I had to find a way to stabilize the sides.
 
