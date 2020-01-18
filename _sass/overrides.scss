@@ -1,14 +1,38 @@
 a {
-	color: #ff7f00;
-	text-decoration: none;
+color: #ff7f00;
 }
 
 ::selection {
-	color: #fff;
-	background: #ff7f00;
+background: #ff7f00;
 }
 
 a:not([class]):hover {
-	background-image: linear-gradient(rgba(255, 127, 0, 1) 0%, rgba(255, 127, 0, 1) 100%);
-	background-size: 1px 1px;
+background-image: linear-gradient(rgba(255, 127, 0, 1) 0%, rgba(255, 127, 0, 1) 100%);
 }
+
+li.navigation-list-item a {
+color: #fff;
+}
+
+.menu-button {
+color: #ff7f00;
+}
+
+.page-content .anchor-heading svg {
+fill: #ff7f00;
+}
+
+.btn {
+color: #ff7f00;
+}
+
+.btn-outline {
+color: #ff7f00;
+}
+
+.search-input:focus + .search-icon {
+fill: #ff7f00; }
+
+.search-result-highlight {
+font-weight: bold;
+color: #ff7f00; }
