@@ -38,14 +38,14 @@ font-weight: bold;
 color: #ff7f00; }
 
 
-.highlight pre { background-color: #1C1C1C; color: #F8F8F8; }
+.highlight pre { background-color: #272822; color: #F8F8F2; }
 .highlight .ge { font-style: italic; }
 .highlight .gs { font-weight: bold; }
-.highlight .c { color: #808080; }
-.highlight .cp { color: #808080; }
-.highlight .c1 { color: #808080; }
-.highlight .cs { color: #808080; }
-.highlight .cm { color: #808080; }
+.highlight .c { color: #75715E; }
+.highlight .cp { color: #75715E; }
+.highlight .c1 { color: #75715E; }
+.highlight .cs { color: #75715E; }
+.highlight .cm { color: #75715E; }
 .highlight .m { color: #AE81FF; }
 .highlight .mf { color: #AE81FF; }
 .highlight .mi { color: #AE81FF; }
@@ -68,25 +68,24 @@ color: #ff7f00; }
 .highlight .s1 { color: #E6DB74; }
 .highlight .ss { color: #E6DB74; }
 .highlight .na { color: #A6E22E; }
-.highlight .bp { color: #F92672; }
 .highlight .nc { color: #A6E22E; font-style: italic; text-decoration: underline; }
 .highlight .no { color: #AE81FF; }
 .highlight .nd { color: #A6E22E; text-decoration: underline; }
 .highlight .ne { color: #A6E22E; text-decoration: underline; }
 .highlight .nf { color: #A6E22E; }
 .highlight .nt { color: #F92672; }
-.highlight .nv { color: #F92672; }
+.highlight .nv { color: #F8F8F2; }
 .highlight .ow { color: #F92672; }
 .highlight .o { color: #F92672; }
-.highlight .n { color: #F8F8F8; }
-.highlight .nl { color: #F8F8F8; }
-.highlight .nn { color: #F8F8F8; }
-.highlight .nx { color: #F8F8F8; }
-.highlight .bp { color: #F92672; }
-.highlight .p { color: #F8F8F8; }
+.highlight .n { color: #F8F8F2; }
+.highlight .nl { color: #F8F8F2; }
+.highlight .nn { color: #F8F8F2; }
+.highlight .nx { color: #F8F8F2; }
+.highlight .bp { color: #F8F8F2; }
+.highlight .p { color: #F8F8F2; }
 
 code {
-	background-color: #1C1C1C;
+	background-color: #272822;
 	font-family: "Office Code Pro", Menlo, Consolas, Monospace;
 	font-weight: 500;
 }
