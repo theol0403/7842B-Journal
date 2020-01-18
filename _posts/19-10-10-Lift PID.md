@@ -4,8 +4,6 @@ title: "Lift PID"
 date: 2019-10-10
 ---
 
-# Lift PID
-
 Today I worked on the lift PID. I had to find a way to stabilize the sides.
 
 Currently, here is the driver control mapping:
@@ -36,7 +34,7 @@ std::valarray<double> Lift::getPosition() const {
 holdPos = getPosition().sum() / 2.0;
 ```
 
-##### Code summary
+### Code summary
 
 Here are the statemachine states in question:
 
