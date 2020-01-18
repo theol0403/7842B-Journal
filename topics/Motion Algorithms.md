@@ -1,7 +1,8 @@
 ---
 layout: default
-permalink: /concepts/motion/
 title: Motion Algorithms
+parent: Topics
+nav_order: 1
 ---
 
 # Motion Algorithms
