@@ -8,16 +8,18 @@ permalink: /
 
 # 7842F Programming Journal
 
-Hello, I'm Theo, the programmer for team 7842F. This is my journal where I will keep programming logs of my progress and ideas.
+Hey! I'm Theo, the programmer for team 7842F. This is my journal where I keep programming logs of my progress and ideas, and where I work on some documentation for my code.
 
 ---
 
 ## Journal Layout:
 
-Daily logs will be kept in `Logs/`.
-Concepts and ideas will be kept in `Concepts/`.
-lib7842 development logs will be kept in `lib7842/`.
-Code dumps will be kept in `Code/`.
+- Concepts and ideas will be documented under `Home`.
+- lib7842 documentation will be in `lib7842`.
+- Daily logs and progress will be recorded in `Posts`.
 
+[Home](/){: .btn }
+[lib7842](/lib7842){: .btn }
+[Posts](/posts){: .btn }
 
 
