@@ -18,8 +18,8 @@ Hey! I'm Theo, the programmer for team 7842F. This is my journal where I keep pr
 - lib7842 documentation will be in `lib7842`.
 - Daily logs and progress will be recorded in `Posts`.
 
-[Home](/){: .btn }
-[lib7842](/lib7842){: .btn }
-[Posts](/posts){: .btn }
+[Home]({{site.url}}){: .btn }
+[lib7842]({{site.url}}/lib7842){: .btn }
+[Posts]({{site.url}}/posts){: .btn }
 
 
