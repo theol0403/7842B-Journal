@@ -11,11 +11,11 @@ A large part of lib7842 is the GUI.  It uses a third-party graphics library name
 
 Here is a screenshot of the GUI:
 
-![](/assets/images/image-20191115154625010.png)
+![]({{site.url}}/assets/images/image-20191115154625010.png)
 
 # Tests
 
 I use Microsoft Azure for tests and CI. Here are some screenshots of that:
 
-<img src="/assets/images/image-20191115154953636.png" style="zoom: 50%;" /> 
-<img src="/assets/images/image-20191115155031424.png" style="zoom: 50%;" />
+<img src="{{site.url}}/assets/images/image-20191115154953636.png" style="zoom: 50%;" /> 
+<img src="{{site.url}}/assets/images/image-20191115155031424.png" style="zoom: 50%;" />

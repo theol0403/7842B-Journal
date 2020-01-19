@@ -2,8 +2,8 @@ title: 7842F Journal
 email: theol0403@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   7842F Programming Journal, Showcase, and Documentation 
-baseurl: "/7842F-Programming-Journal" # the subpath of your site, e.g. /blog
-url: "https://theol0403.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://theol0403.github.io/7842F-Programming-Journal" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  theol0403
 
 remote_theme: pmarsceill/just-the-docs
