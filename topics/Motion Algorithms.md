@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Topics
+parent: Home
 title: Motion Algorithms
 nav_order: 1
 ---

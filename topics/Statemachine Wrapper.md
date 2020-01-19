@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Topics
+parent: Home
 title: State Machine
 nav_order: 3
 ---
