@@ -26,8 +26,6 @@ permalink: /posts/
 	</a>
 	- {{ post.date | date_to_string }}
 </h1>
-<article>
-	{{ post.content }}
-</article>
+{{ post.content }}
 {% endfor %}
 
