@@ -10,8 +10,6 @@ permalink: /
 
 Hello, I'm Theo, the programmer for team 7842F. This is my journal where I will keep programming logs of my progress and ideas.
 
-<img src="assets/images/7842FLogo-632x356-600x356.png" width="300" height="178" />
-
 ---
 
 ## Journal Layout:
