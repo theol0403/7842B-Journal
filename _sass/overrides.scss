@@ -43,6 +43,14 @@ li.navigation-list-item a {
 	color: #ff7f00;
 }
 
+.btn:focus:hover, .btn.selected:focus {
+	box-shadow: 0 0 0 3px #ff7f00;
+}
+
+.btn:hover, .btn.zeroclipboard-is-hover {
+	color: #ff7f00;
+}
+
 
 .highlight pre { background-color: #1C1C1C; color: #F8F8F8; }
 .highlight .ge { font-style: italic; }
