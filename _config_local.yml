@@ -18,3 +18,10 @@ aux_links:
   "lib7842": "//github.com/theol0403/lib7842"
   "Tower": "//github.com/theol0403/7842F-Tower-Code"
   "Github": "//github.com/theol0403/7842F-Programming-Journal"
+
+defaults:
+- scope:
+    path: ""
+    type: "posts"
+  values:
+    layout: "post"
