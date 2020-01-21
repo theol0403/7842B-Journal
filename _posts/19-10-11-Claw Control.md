@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Claw Control"
-date: 2019-10-11
 ---
 
 Today I had to figure out claw mapping and control. Our claw has an individual motor for each side of the claw, so I decided to keep the two sides completely separate. I wrote a statemachine that is used for both sides of the claw. 
