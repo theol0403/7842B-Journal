@@ -1,18 +1,20 @@
 ---
 layout: default
-title: Posts
-nav_order: 3
-permalink: /posts/
+title: Building
+nav_order: 2
+permalink: /posts/building
 search_exclude: true
-has_children: true
+parent: Posts
 ---
 
-<h1>Posts</h1>
+{% assign building_posts = site.posts | where: "categories", "building" %}
+
+<h1>Building</h1>
 
 <h2 class="text-delta">Table of contents</h2>
 
 <ul id="markdown-toc">
-	{% for post in site.posts %}
+	{% for post in building_posts %}
 	<li>
 		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
 		- {{ post.date | date_to_string }}
@@ -21,13 +23,13 @@ has_children: true
 </ul>
 
 
-{% for post in site.posts %}
+{% for post in building_posts %}
 <hr></hr>
 <h1>
 	<a href="{{ post.url | absolute_url }}">
 		{{ post.title }}
 	</a>
-	- {{ post.date | date_to_string }} - {{ post.categories[0] | capitalize }}
+	- {{ post.date | date_to_string }}
 </h1>
 <article>
 	{{ post.content }}

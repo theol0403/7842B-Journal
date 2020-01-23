@@ -1,5 +1,6 @@
 ---
 title: "Lift PID"
+categories: programming
 ---
 
 Today I worked on the lift PID. I had to find a way to stabilize the sides.
