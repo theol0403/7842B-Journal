@@ -19,6 +19,8 @@ aux_links:
   "Tower": "//github.com/theol0403/7842F-Tower-Code"
   "Github": "//github.com/theol0403/7842F-Programming-Journal"
 
+permalink: /:categories/:year-:month-:day/:title/
+
 defaults:
 - scope:
     path: ""
