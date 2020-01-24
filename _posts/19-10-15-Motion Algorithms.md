@@ -1,11 +1,11 @@
 ---
-layout: default
-parent: Home
 title: Motion Algorithms
+categories: programming
+
+nav_exclude: false
+parent: Home
 nav_order: 1
 ---
-
-# Motion Algorithms
 
 A big focus for this year has been motion algorithms for autonomous. Motion algorithms allow for a faster, easier, and more competitive autonomous. This year, we have built an **X-Drive** robot, which opens up a wide range of possibilities. Having a holonomic chassis means that we can have *heading-agnostic* movement functions, meaning that we can drive anywhere while turning at a completely independent angle.
 
