@@ -1,6 +1,5 @@
 ---
 title: Task Wrapper
-categories: programming
 parent: Home
 nav_order: 2
 ---

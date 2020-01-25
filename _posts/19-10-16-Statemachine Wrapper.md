@@ -1,6 +1,5 @@
 ---
 title: State Machine
-categories: programming
 parent: Home
 nav_order: 3
 ---

@@ -9,7 +9,7 @@ has_children: true
 has_toc: false
 ---
 
-{% assign building_posts = site.posts | where: "categories", "building" %}
+{% assign building_posts = site.posts | where: "parent", "Building" %}
 
 <h1>Building</h1>
 

@@ -9,7 +9,7 @@ has_children: true
 has_toc: false
 ---
 
-{% assign programming_posts = site.posts | where: "categories", "programming" %}
+{% assign programming_posts = site.posts | where: "parent", "Programming" %}
 
 <h1>Programming</h1>
 

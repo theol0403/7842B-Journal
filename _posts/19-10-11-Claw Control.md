@@ -1,6 +1,5 @@
 ---
 title: "Claw Control"
-categories: programming
 parent: Programming
 ---
 

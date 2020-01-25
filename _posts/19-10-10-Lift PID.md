@@ -1,6 +1,5 @@
 ---
 title: "Lift PID"
-categories: programming
 parent: Programming
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Motion Algorithms
-categories: programming
 parent: Home
 nav_order: 1
 ---
