@@ -2,7 +2,6 @@
 title: State Machine
 categories: programming
 
-nav_exclude: false
 parent: Home
 nav_order: 3
 ---

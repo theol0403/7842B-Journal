@@ -27,4 +27,5 @@ defaults:
     type: "posts"
   values:
     layout: "post"
-    nav_exclude: true
+    parent: Programming
+    grand_parent: All Posts

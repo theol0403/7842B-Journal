@@ -2,7 +2,6 @@
 title: Task Wrapper
 categories: programming
 
-nav_exclude: false
 parent: Home
 nav_order: 2
 ---
