@@ -6,6 +6,7 @@ permalink: /posts/programming
 search_exclude: true
 parent: All Posts
 has_children: true
+has_toc: false
 ---
 
 {% assign programming_posts = site.posts | where: "categories", "programming" %}
@@ -22,18 +23,4 @@ has_children: true
 	</li>
 	{% endfor %}
 </ul>
-
-
-{% for post in programming_posts %}
-<hr></hr>
-<h1>
-	<a href="{{ post.url | absolute_url }}">
-		{{ post.title }}
-	</a>
-	- {{ post.date | date_to_string }}
-</h1>
-<article>
-	{{ post.content }}
-</article>
-{% endfor %}
 
