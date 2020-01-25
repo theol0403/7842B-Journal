@@ -27,5 +27,4 @@ defaults:
     type: "posts"
   values:
     layout: "post"
-    parent: Programming
     grand_parent: All Posts

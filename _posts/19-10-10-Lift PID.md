@@ -1,6 +1,7 @@
 ---
 title: "Lift PID"
 categories: programming
+parent: Programming
 ---
 
 Today I worked on the lift PID. I had to find a way to stabilize the sides.
