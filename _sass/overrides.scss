@@ -116,3 +116,22 @@ code {
 #title_name {
 	white-space: pre;
 }
+
+.task-list-item-checkbox {
+	-webkit-appearance: none;
+	appearance: none;
+	border: 1px solid #cacece;
+	border-radius: 3px;
+	position: relative;
+	width: 20px;
+	height: 20px;
+}
+
+.task-list-item-checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #fff;
+}
