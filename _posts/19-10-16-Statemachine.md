@@ -6,7 +6,7 @@ nav_order: 3
 
 A statemachine is an elegant way of programming a subsystem, and makes it easy to control both in driver control and autonomous. A statemachine is usually implemented using an enum containing a list of states, and then a switch statement in a separate thread that implements each state.
 
-However, implementing a statemachine requires a substantial amount of boilerplate, both to set up the task but also to set up the setter and getter functions. This is why I wrote an abstract `StateMachine` wrapper that reduces said boilerplate. `StateMachine` inherits task functionality from [Task Wrapper](Task Wrapper).
+However, implementing a statemachine requires a substantial amount of redundant code to set up the task with setter and getter functions. This is why I wrote an abstract `StateMachine` wrapper that reduces said boilerplate. `StateMachine` inherits task functionality from [Task Wrapper](Task Wrapper).
 
 Here is the class, which accepts the enum type as a template parameter:
 
@@ -22,7 +22,7 @@ Here is the class, which accepts the enum type as a template parameter:
 template <typename States, States assumedState = States::off>
 class StateMachine : public TaskWrapper {
 
- public:
+public:
   StateMachine() = default;
   virtual ~StateMachine() = default;
 
@@ -33,6 +33,19 @@ class StateMachine : public TaskWrapper {
    */
   virtual void setState(const States& istate) {
     state = istate;
+  }
+
+  /**
+   * Sets the state and waits until the statemachine reports done.
+   *
+   * @param istate The istate
+   */
+  virtual void setStateBlocking(const States& istate) {
+    _isDone = false;
+    state = istate;
+    while (!isDone()) {
+      pros::delay(20);
+    };
   }
 
   /**
@@ -56,19 +69,34 @@ class StateMachine : public TaskWrapper {
     return state;
   }
 
- protected:
+  /**
+   * Gets the state.
+   *
+   * @return The state.
+   */
+  virtual bool isDone() const {
+    return _isDone;
+  }
+
+protected:
   /**
    * Override this method to implement setup procedures.
    */
-  virtual void calibrate() = 0;
+  virtual void initialize() = 0;
 
   /**
    * Override this method to implement the statemachine task
    */
   void loop() override = 0;
 
+  virtual void setDone() {
+    _isDone = true;
+  }
+
   States state {States::off};
   States lastState {assumedState};
+
+  bool _isDone = false;
 };
 ```
 
