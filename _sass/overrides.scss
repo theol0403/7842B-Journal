@@ -120,7 +120,7 @@ code {
 .task-list-item-checkbox {
 	-webkit-appearance: none;
 	appearance: none;
-	border: 1px solid #cacece;
+	border: 1px solid #ff7f00;
 	border-radius: 3px;
 	position: relative;
 	width: 20px;
@@ -133,5 +133,9 @@ code {
 	position: absolute;
 	top: 0px;
 	left: 3px;
-	color: #fff;
+	color: #ff7f00;
+}
+
+.page-content ul > li::before {
+	color: #ff7f00;
 }
