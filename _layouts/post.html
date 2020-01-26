@@ -6,7 +6,7 @@ layout: default
 	<a href="{{ page.url | absolute_url }}">
 		{{ page.title }}
 	</a>
-	- {{ page.date | date_to_string }}
+	- {{ page.date | date: "%Y-%m-%d" }}
 </h1>
 <article>
 	{{ content }}
