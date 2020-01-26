@@ -11,3 +11,4 @@ gem "github-pages", group: :jekyll_plugins
 gem "jekyll", "~> 3.8.0"
 
 gem "just-the-docs"
+gem 'jekyll-compose', group: [:jekyll_plugins]
