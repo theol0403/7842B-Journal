@@ -28,6 +28,3 @@ defaults:
   values:
     layout: "post"
     grand_parent: All Posts
-
-plugins:
-  - jemoji

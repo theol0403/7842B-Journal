@@ -252,7 +252,6 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.8.0)
   jekyll-compose
-  jemoji
   just-the-docs
 
 BUNDLED WITH
