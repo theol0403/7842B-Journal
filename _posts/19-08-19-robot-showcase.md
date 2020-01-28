@@ -1,11 +1,8 @@
 ---
-layout: default
-title: 2019 Robot Showcase
-nav_order: 5
-permalink: robot-showcase
+title: 2018-19 Showcase
+parent: Home
+nav_order: 100
 ---
-
-# 7842F 2018-19 Robot Showcase - Flywheel Control, Odometry, Engineering Journals & More
 
 Hello everyone!
 
@@ -22,9 +19,6 @@ Even though the Turning Point season is way over, the things I will show in this
 I recorded a brief video a while ago demonstrating our robot. The following post will cover in more detail the designs that went into each system.
 
 <https://www.youtube.com/watch?v=iW4RlnHbDrY>
-
-To learn more about each system, click the expand arrow on each of the sections.
-<hr>
 
 # Flywheel Velocity Control
 
