@@ -45,7 +45,7 @@ To test this algorithm, I (with some help) made a javascript simulation. You can
 <object width="100%" height="300" data="{{site.url}}/assets/demos/adaptiveSeek.html"> 
     ![]({{site.url}}/assets/images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
 </object>
-
+<!-- 
 ## Autonomous Code
 Once I had the tracking and movement completed, it was time to make an API for me to use for writing autonomous programs. I wanted something flexible, abstract, and feature-packed. Here is what I ended up with:
 
@@ -80,4 +80,4 @@ All the movement functions are blocking, but I still wanted to be able to trigge
 ![]({{site.url}}/assets/images/44df1fcc5ac2962d52ed66e05f9c7f9b921a7242.png)
 
 ## Emergency Abort
-There is nothing I dislike more than having the robot slightly off in autonomous, causing it to drive into a wall, and then being stuck there for the rest of the autonomous trying to push the wall over. Thus I made a system that detects when the robot is trying to move but is not moving. When it detects that the robot is stuck, it exits the current movement and goes on to the next one. With odometry, hopefully the robot will be able to continue the autonomous, because it still know its position even though it got stuck and had to abort a movement.
+There is nothing I dislike more than having the robot slightly off in autonomous, causing it to drive into a wall, and then being stuck there for the rest of the autonomous trying to push the wall over. Thus I made a system that detects when the robot is trying to move but is not moving. When it detects that the robot is stuck, it exits the current movement and goes on to the next one. With odometry, hopefully the robot will be able to continue the autonomous, because it still know its position even though it got stuck and had to abort a movement. -->
