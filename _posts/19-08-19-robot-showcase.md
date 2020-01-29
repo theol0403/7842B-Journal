@@ -323,7 +323,8 @@ With the help of others, I was able to implement the math for this. When doing d
 
 To test this algorithm, I (with some help) made a javascript simulation. You can see how the robot prefers turning over driving, and how it settles smoothly.
 
-![E2wxx9UuT4|438x336]({{site.url}}/assets/images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
+![]({{site.url}}/assets/images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
+
 ## Autonomous Code
 Once I had the tracking and movement completed, it was time to make an API for me to use for writing autonomous programs. I wanted something flexible, abstract, and feature-packed. Here is what I ended up with:
 
