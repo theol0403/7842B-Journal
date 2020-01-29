@@ -1,6 +1,5 @@
 ---
 title: 2018-19 Showcase
-parent: Home
 nav_order: 100
 ---
 
