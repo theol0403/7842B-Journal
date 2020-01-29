@@ -38,9 +38,11 @@ If the robot was perpendicular to the target, the answer would be 0. But as the 
 
 ![]({{site.url}}/assets/images/d540e20cfe7ba1395aed7a1ecdab796141a108c0.png)
 
-After some research and help, I was able to implement the math for this. When doing distance PID on the output of these calculations, the robot was able to move much more efficiently. I also had to implement some logic to be able to drive backward. The reason this algorithm works great for settling is that if I turn off the angle PID when the robot is a certain distance away from the target, the adaptive distance PID brings the robot to a settled stop, giving a negative signal to back up.
+After some research and help, I was able to implement the math for this. When doing distance PID on the output of these calculations, the robot was able to move much more efficiently. I also had to implement some logic to be able to drive backward. 
 
-To test this algorithm, I made a javascript simulation. You can see how the robot prefers turning over driving, and how it settles smoothly.
+The reason this algorithm works great for settling is that if I turn off the angle PID when the robot is a certain distance away from the target, the adaptive distance PID brings the robot to a settled stop, giving a negative signal to back up.
+
+To test this algorithm, I made a javascript simulation. You can see how the robot prefers turning over driving, and how it settles smoothly:
 
 <object width="100%" height="300" data="{{site.url}}/assets/demos/adaptiveSeek.html"> 
     ![]({{site.url}}/assets/images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
@@ -55,17 +57,17 @@ Every single autonomous motion has a settling period. However, I wanted the sett
 
 To do this, I created a parameter in each movement function that accepts a special kind of function called a `Settler`. Every loop, the movement function will ask the settler “am I settled yet?” and then the function will return true when it’s conditions are met.
 
-Then, I created a few default settling functions and added the functionality to generate new settling functions on the fly. For example, here is a command with a full settle that comes to a stop:
+Then, I created a few default settling functions and added the functionality to generate new settling functions on the fly. For example, here is a command with a settler that waits for all the PID controllers to settle.
 ```cpp
 driveToPoint({1_ft, 1_ft}, 1, driveSettle);
 ```
-If I wanted to make the robot exit the movement when it was 4 inches away from the target, I could say 
+If I wanted to make the robot exit the movement when it was 4 inches away from the target, I could use a distance-based settler. 
 
 ```cpp
-chassis.driveToPoint({1_ft, 1_ft}, 1, makeSettle(4_in));
+driveToPoint({1_ft, 1_ft}, 1, makeSettle(4_in));
 ```
 
-Here is the lib7842 implementation:
+Here is the lib7842 implementation of a `Settler`:
 ```cpp
 /**
  * Function that returns true to end chassis movement. Used to implement different settling methods.
@@ -79,11 +81,11 @@ All turning is essentially the same motion. The only difference with all possibl
 Thus I used the same modular function pattern as the settling system and added parameters in the turning function to fulfill the angle calculation and movement method. Here are a few examples of a turn command:
 
 ```cpp
-chassis.turn(angleCalc({1_ft, 1_ft}), pointTurn, turnSettle);
-chassis.turn(angleCalc(90_deg), leftPivot, makeSettle(5_deg));
+turn(makeAngle({1_ft, 1_ft}), pointTurn, turnSettle);
+turn(makeAngle(90_deg), leftPivot, makeSettle(5_deg));
 ```
 
-For simplicity, I also made a few helper functions - `turnToAngle(angle)`, `turnAngle(angle)`, and `turnToPoint(point)`, which all just call `turn(angleCalc)` internally.
+For simplicity, I also made a few helper functions: `turnToAngle(angle)`, `turnAngle(angle)`, and `turnToPoint(point)`, which all just call `turn(angleCalc)` internally.
 
 Here is the lib7842 implementation:
 
@@ -102,21 +104,13 @@ using AngleCalculator = std::function<QAngle(const OdomController& odom)>;
 ```
 
 ```cpp
-  /**
-   * Turn the chassis using the given AngleCalculator
-   *
-   * @param angleCalculator The angle calculator
-   * @param turner          The turner
-   * @param settler         The settler
-   */
-  virtual void turn(const AngleCalculator& angleCalculator, const Turner& turner = pointTurn,
-                    const Settler& settler = defaultTurnSettler);
+/**
+* Turn the chassis using the given AngleCalculator
+*
+* @param angleCalculator The angle calculator
+* @param turner          The turner
+* @param settler         The settler
+*/
+virtual void turn(const AngleCalculator& angleCalculator, const Turner& turner = pointTurn,
+                const Settler& settler = defaultTurnSettler);
 ```
-
-## AsyncAction
-All the movement functions are blocking, but I still wanted to be able to trigger actions such as moving an arm in the middle of a movement. To do this I developed a system called AsyncAction, which requires a trigger (ex. min distance to point) and executes an action (ex. moves arm). In autonomous, used it to turn on the ball intake right when the robot reached the ball.
-
-![]({{site.url}}/assets/images/44df1fcc5ac2962d52ed66e05f9c7f9b921a7242.png)
-
-## Emergency Abort
-There is nothing I dislike more than having the robot slightly off in autonomous, causing it to drive into a wall, and then being stuck there for the rest of the autonomous trying to push the wall over. Thus I made a system that detects when the robot is trying to move but is not moving. When it detects that the robot is stuck, it exits the current movement and goes on to the next one. With odometry, hopefully the robot will be able to continue the autonomous, because it still know its position even though it got stuck and had to abort a movement.
