@@ -10,12 +10,10 @@ In order to move to specific coordinates, I needed to design a versatile control
 
 Once you know the position of the robot and where you want to move, the challenge is to actually move there. Here is a very simple algorithm to drive to a point:
 
-```
 1. Calculate angle to target
 2. Turn to face the target
 3. Calculate distance to target
 4. Move distance to reach target
-```
 
 While this algorithm works decently well, it is quite slow and is not able to dynamically adjust while on-course. I instead wanted to make an algorithm that would curve toward the target, and calculate course adjustments on the fly.
 
@@ -23,7 +21,9 @@ While this algorithm works decently well, it is quite slow and is not able to dy
 
 The first algorithm I tried was PID. The distance and angle to the target would be sent to 2 PID controllers, and then the outputs would be combined. There were two problems with this method.
 
-The first was that the algorithm had to be terminated when the robot reached the general vicinity of the target, or else the robot would start having a spasm. This is because the PID needs to have a negative input signal to be able to back up and settle. However, when calculating distance to a point (using Pythagoras), you can’t know when you overshoot the target. Therefore, the robot could only move forward, so when it reaches **and overshoots** the target, the angle to the target flips 180 degrees and the distance PID goes full throttle.
+The first was that the algorithm had to be terminated when the robot reached the general vicinity of the target, or else the robot would start having a spasm. This is because the PID needs to have a negative input signal to be able to back up and settle. 
+
+However, when calculating distance to a point (using Pythagoras), you can’t know when you overshoot the target. Therefore, the robot could only move forward, so when it reaches **and overshoots** the target, the angle to the target flips 180 degrees and the distance PID goes full throttle.
 
 The second problem with this method is that it is not the most efficient. If the robot was perpendicular to the target, the distance PID would output full power, even though moving forward is the wrong thing to do.
 
@@ -57,6 +57,14 @@ Every single autonomous motion has a settling period. However, I wanted the sett
 
 To do this, I created a parameter in each movement function that accepts a special kind of function called a `Settler`. Every loop, the movement function will ask the settler “am I settled yet?” and then the function will return true when it’s conditions are met.
 
+Here is the lib7842 implementation of a `Settler`:
+```cpp
+/**
+ * Function that returns true to end chassis movement. Used to implement different settling methods.
+ */
+using Settler = std::function<bool(const OdomController& odom)>;
+```
+
 Then, I created a few default settling functions and added the functionality to generate new settling functions on the fly. For example, here is a command with a settler that waits for all the PID controllers to settle.
 ```cpp
 driveToPoint({1_ft, 1_ft}, 1, driveSettle);
@@ -67,16 +75,23 @@ If I wanted to make the robot exit the movement when it was 4 inches away from t
 driveToPoint({1_ft, 1_ft}, 1, makeSettle(4_in));
 ```
 
-Here is the lib7842 implementation of a `Settler`:
+Here are some examples of settler creators:
 ```cpp
 /**
- * Function that returns true to end chassis movement. Used to implement different settling methods.
+ * Make a Settler that exits when angle error is within given range
+ * @param angle The angle error threshold
  */
-using Settler = std::function<bool(const OdomController& odom)>;
+static Settler makeSettler(const QAngle& angle);
+
+/**
+ * Make a Settler that exits when distance error is within given range
+ * @param distance The distance error threshold
+ */
+static Settler makeSettler(const QLength& distance);
 ```
 
 ## Turning
-All turning is essentially the same motion. The only difference with all possible turns is the **goal** calculation and **movement method** (point, pivot, or arc). I wanted to write only one turning algorithm, and have all the implementations plug-in. 
+All turning is essentially the same motion. The only difference with all possible turns is the **goal calculation** and **movement method** (point, pivot, or arc). I wanted to write only one turning algorithm, and have all the implementations plug-in. 
 
 Thus I used the same modular function pattern as the settling system and added parameters in the turning function to fulfill the angle calculation and movement method. Here are a few examples of a turn command:
 
@@ -84,8 +99,6 @@ Thus I used the same modular function pattern as the settling system and added p
 turn(makeAngle({1_ft, 1_ft}), pointTurn, turnSettle);
 turn(makeAngle(90_deg), leftPivot, makeSettle(5_deg));
 ```
-
-For simplicity, I also made a few helper functions: `turnToAngle(angle)`, `turnAngle(angle)`, and `turnToPoint(point)`, which all just call `turn(angleCalc)` internally.
 
 Here is the lib7842 implementation of `Turner` and `AngleCalculator`:
 
@@ -103,7 +116,7 @@ using Turner = std::function<void(ChassisModel& model, double vel)>;
 using AngleCalculator = std::function<QAngle(const OdomController& odom)>;
 ```
 
-Here is the basis `turn` function that all other turns build on:
+Here is the basis `turn` function that **all** other turns use:
 
 ```cpp
 /**
@@ -136,6 +149,8 @@ static AngleCalculator makeAngleCalculator(const Vector& point);
 ```
 
 These `AngleCalculator`s will provide the foundation on which to build X-Drive control on.
+
+I also made a few helper functions to provide more expressive turning commands: `turnToAngle(angle)`, `turnAngle(angle)`, and `turnToPoint(point)`, which all just call `turn(angleCalc)` internally.
 
 ## OdomController Code:
 Here is the entire `OdomController` header:
@@ -388,4 +403,47 @@ protected:
   QLength distanceErr = 0_in;
 };
 } // namespace lib7842
+```
+Here is the motion algorithm to drive to a point using the adaptive seeking method:
+
+```cpp
+void OdomController::driveToPoint(const Vector& targetPoint, double turnScale,
+                                  const Settler& settler) {
+  resetPid();
+  auto rate = timeUtil.getRate();
+  do {
+    State state = getState();
+    Vector closestPoint = closest(state, targetPoint);
+
+    QAngle angleToClose = state.angleTo(closestPoint);
+    QAngle angleToTarget = state.angleTo(targetPoint);
+
+    QLength distanceToClose = state.distTo(closestPoint);
+    QLength distanceToTarget = state.distTo(targetPoint);
+
+    // go backwards
+    if (angleToClose.abs() >= 90_deg) distanceToClose = -distanceToClose;
+
+    if (distanceToTarget.abs() < settleRadius) {
+      angleErr = 0_deg;
+      // used for settling
+      distanceErr = distanceToClose;
+    } else {
+      angleErr = angleToTarget;
+      // used for settling
+      distanceErr = distanceToTarget;
+    }
+
+    // rotate angle to be +- 90
+    angleErr = rotateAngle90(angleErr);
+
+    double angleVel = angleController->step(-angleErr.convert(degree));
+    double distanceVel = distanceController->step(-distanceToClose.convert(millimeter));
+
+    driveVector(model, distanceVel, angleVel * turnScale);
+    rate->delayUntil(10_ms);
+  } while (!settler(*this));
+
+  driveVector(model, 0, 0);
+}
 ```
