@@ -38,7 +38,7 @@ Driving to a point is as simple as using odometry to calculate the angle and dis
 
 I can then use the above function to apply the PID output to the desired direction. Doing this, the robot will always move towards the target point, and it even handles settling really well.
 
-## Turning while driving
+## Turning While Driving
 
 Using the above calculations, turning while driving is quite easy to implement. I simply use an `AngleCalculator` to calculate the desired turning amount. I apply PID to the output of the `AngleCalculator`, and then combine that with the output of the movement command. 
 
