@@ -47,32 +47,3 @@ Since we have an X-Drive robot, we can often combine driving and turning into a 
 Since we use odometry and motion algorithms to tell the robot to go to certain coordinates, we can much more easily plan autonomous programs using a map. We overlaid a coordinate system over a top-down view of the field, so we can simply plot and record points:
 
 <img src="{{site.url}}/assets/images/field planning.png" width="70%" />
-
-### X-Drive
-
-Having an X-Drive allows us to do some pretty neat stuff, such as driving while turning. We can tell the chassis to strafe at a certain direction and speed, using this math:
-
-<img src="{{site.url}}/assets/images/image-20191115150107968.png" width="70%" />
-
-Here is the lib7842 implementation of this functionality:
-```cpp
-/**
- * Control the chassis movement for an XDrive using voltage. Strafes at the given voltage in the
- * given direction. Applies magnitude control to prioritize turning. Range of forward, yaw, and
- * strafe is +-1, but yaw may be outside of the range which prioritizes turning.
- *
- * @param model     The chassis model
- * @param forward   The forward voltage
- * @param yaw       The yaw voltage
- * @param direction The direction
- */
-void strafeVector(const std::shared_ptr<XDriveModel>& model, double forward, double yaw,
-                  const QAngle& direction);
-```
-
-Building on this capability, we are able to use these commands
-
-```cpp
-driveToPoint(point, angle); // drive to point while facing angle
-driveDistance(distance, angle); // drive distance while facing angle
-```
