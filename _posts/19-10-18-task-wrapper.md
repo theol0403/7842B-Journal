@@ -1,7 +1,7 @@
 ---
 title: Task Wrapper
-parent: Home
-nav_order: 2
+parent: lib7842
+nav_order: 4
 ---
 
 If a class requires a task as a member, it causes some problems. A `pros::Task` requires a callback function to run, but due to some limitations in c++, the address of that function needs to be known in *compile-time*. This means that the task callback needs to be `static` , which means that it does not belong to the class instance and it can't access class members. To fix this, a pattern named **trampoline** is used. Trampoline is the act of passing a opaque pointer to the class object *through the task* to be received by the static function, having the static function cast the pointer to the correct class type, and calling a member function to execute the task.
