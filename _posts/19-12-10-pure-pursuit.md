@@ -21,9 +21,27 @@ Pure pursuit works by finding a *lookahead* on the path. It does this by finding
 
 ## Implementing Pure Pursuit
 
-To test pursuit, I wrote a full simulation using javascript. I was able to implement all the logic and optimization in that controlled environment. Implementing algorithms in javascript is very useful, as it provides a visual way of testing the algorithm and the code can translate to C++ quite easily.
+To test pursuit, I wrote a full simulation using javascript. I was able to implement all the logic and optimization in that controlled environment. Implementing algorithms in javascript is very useful, as it provides a visual way of testing the algorithm and the code can translate to C++ quite easily. This algorithm has been in progress since June 2019.
 
 <object width="100%" height="500" data="{{site.url}}/assets/demos/pathGeneration/index.html"> 
 </object> 
 
+Here are the controls:
+- Click to place node 
+- Click and drag to move node
+- Right-click node to delete 
+- Right-click and drag to delete selection
+- Scroll to change angle
 
+Here are the sliders:
+1. Sample resolution: how many points should be generated from the path formula
+2. Smoothing constant: how smooth should the connections between segments be
+3. Lookahead distance: how far along the path should the robot look
+
+## Code
+
+Here is the lib7842 implementation of the pure-pursuit algorithm:
+
+```cpp
+
+```
