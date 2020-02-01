@@ -40,8 +40,12 @@ Here are the sliders:
 
 ## Code
 
-Here is the lib7842 implementation of the pure-pursuit algorithm:
+The majority of the code currently in lib7842 is used for pure pursuit. This includes path representations, path creation and interpolation, path velocity generation (motion profile), as well as the actual path follower.
 
+Here is an example code for pure pursuit:
 ```cpp
-
+auto path = SimplePath({odom->getState(), {0_ft, 0_ft}, {0_ft, 4_ft}})
+    .generate(1_mm)
+    .smoothen(.001, 1e-10 * meter);
+follower.followPath(PathGenerator::generate(path, limits), false);
 ```
