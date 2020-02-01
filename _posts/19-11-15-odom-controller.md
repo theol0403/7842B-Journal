@@ -17,7 +17,7 @@ Once you know the position of the robot and where you want to move, the challeng
 
 While this algorithm works decently well, it is quite slow and is not able to dynamically adjust while on-course. I instead wanted to make an algorithm that would curve toward the target, and calculate course adjustments on the fly.
 
-### PID to heading and distance
+### PID to Heading and Distance
 
 The first algorithm I tried was PID. The distance and angle to the target would be sent to 2 PID controllers, and then the outputs would be combined. There were two problems with this method.
 
@@ -156,18 +156,6 @@ I also made a few helper functions to provide more expressive turning commands: 
 Here is the entire `OdomController` header:
 
 ```cpp
-#pragma once
-#include "lib7842/api/other/utility.hpp"
-#include "okapi/api/chassis/model/chassisModel.hpp"
-#include "okapi/api/control/iterative/iterativePosPidController.hpp"
-#include "okapi/api/odometry/odometry.hpp"
-#include "okapi/api/util/timeUtil.hpp"
-#include <functional>
-
-namespace lib7842 {
-using namespace okapi;
-class OdomController;
-
 /**
  * Function that returns true to end chassis movement. Used to implement different settling methods.
  */
@@ -402,7 +390,6 @@ protected:
   QAngle angleErr = 0_deg;
   QLength distanceErr = 0_in;
 };
-} // namespace lib7842
 ```
 Here is the motion algorithm to drive to a point using the adaptive seeking method:
 
