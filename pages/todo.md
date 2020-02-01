@@ -10,9 +10,9 @@ permalink: todo
 
 ### Journal
 
-- [ ] Odom Controller
+- [x] Odom Controller
 - [ ] Autonomous Programs
-- [ ] Pure Pursuit
+- [x] Pure Pursuit
 - [ ] Robot todo
 - [ ] vision API
 - [ ] lift balancing
