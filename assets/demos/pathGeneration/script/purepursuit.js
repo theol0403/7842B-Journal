@@ -57,8 +57,7 @@ class PurePursuit {
       Vector.dist(closestPoint.vector(), this.path[this.path.length - 1].vector()) < this.lookDistance &&
       Vector.dist(currentPos, this.path[this.path.length - 1].vector()) < this.lookDistance;
 
-    let curvature =
-      endInLookahead ? 0 : this.findLookaheadCurvature(currentPos, heading, finalLookPoint);
+    let curvature = this.findLookaheadCurvature(currentPos, heading, finalLookPoint);
 
     let angleToEnd = Math.abs(angleToPoint(this.path[this.path.length - 1].vector(), currentPos, heading));
     let pastEnd = this.followBackward ? angleToEnd < PI / 2 : angleToEnd > PI / 2;
