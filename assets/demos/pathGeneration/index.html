@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Path Generation</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <canvas id="c">
+  </canvas>
+
+  <script src="script/jquery.js"></script>
+
+  <div class="sliderContainer">
+    <input type="range" min="1" max="1000" value="300" class="slider" id="slider1">
+    <span id="slider1_val" class="text"></span>
+
+    <input type="range" min="1" max="1000" value="500" class="slider" id="slider2">
+    <span id="slider2_val" class="text"></span>
+
+    <input type="range" min="1" max="1000" value="500" class="slider" id="slider3">
+    <span id="slider3_val" class="text"></span>
+  </div>
+
+  <a class="tooltip">
+    <span id="tooltip-span"></span>
+  </a>
+
+
+  <script src="script/lodash.js"></script>
+  <script src="script/vector.js"></script>
+  <script src="script/point.js"></script>
+  <script src="script/spline.js"></script>
+  <script src="script/pathgen.js"></script>
+  <script src="script/purepursuit.js"></script>
+  <script src="script/robot.js"></script>
+  <script src="script/canvas.js"></script>
+  <script src="script/waypoint.js"></script>
+  <script src="main.js"></script>
+
+
+</body>
+
+</html>
