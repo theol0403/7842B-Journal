@@ -19,6 +19,8 @@ Pure pursuit works by finding a *lookahead* on the path. It does this by finding
 
 ![]({{site.url}}/assets/images/pure-pursuit.png)
 
+![]({{site.url}}/assets/images/lookahead.png)
+
 ## Implementing Pure Pursuit
 
 To test pursuit, I wrote a full simulation using javascript. I was able to implement all the logic and optimization in that controlled environment. Implementing algorithms in javascript is very useful, as it provides a visual way of testing the algorithm and the code can translate to C++ quite easily. This algorithm has been in progress since June 2019.
