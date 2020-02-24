@@ -33,7 +33,6 @@ Here are the controls:
 - Click and drag to move node
 - Right-click node to delete 
 - Right-click and drag to delete selection
-- Scroll to change angle
 
 Here are the sliders:
 1. Sample resolution: how many points should be generated from the path formula

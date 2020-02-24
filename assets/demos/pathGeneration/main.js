@@ -17,8 +17,7 @@ let path = [];
 function main() {
   maintainCanvas();
 
-  points.push(new WayPoint(1, 1, Math.PI/2), new WayPoint(4, 5, Math.PI/2), new WayPoint(6, 2, 2*Math.PI/2));
-
+  points.push(new WayPoint(1, 1, Math.PI/2), new WayPoint(4, 4, Math.PI/2), new WayPoint(6, 2, 2*Math.PI/2));
   bots.push(new PurePursuit(new Vector(1, 1)));
 
   animate();
@@ -29,7 +28,8 @@ function animate() {
 
   maintainCanvas();
 
-  let test = new QuinticPathPlanner(points, sliders.resolution, sliders.scalar);
+  let ipoints = calculateAngles(points);
+  let test = new QuinticPathPlanner(ipoints, sliders.resolution, sliders.scalar);
   path = test.getPath();
 
   /**
