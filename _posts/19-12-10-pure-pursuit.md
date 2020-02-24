@@ -19,7 +19,7 @@ Pure pursuit works by finding a *lookahead* on the path. It does this by finding
 
 ![]({{site.url}}/assets/images/pure-pursuit.png)
 
-![]({{site.url}}/assets/images/lookahead.png)
+<img src="{{site.url}}/assets/images/lookahead.png" width="30%" />
 
 ## Implementing Pure Pursuit
 
