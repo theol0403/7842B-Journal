@@ -4,6 +4,7 @@ title: Home
 nav_order: 1
 has_children: true
 permalink: /
+has_toc: false
 ---
 
 # 7842F Programming Journal
