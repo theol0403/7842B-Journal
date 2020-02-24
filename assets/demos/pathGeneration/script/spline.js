@@ -24,28 +24,28 @@ class QuinticPolynomial {
 
 class QuinticSegmentPlanner {
 
-  constructor(s, g, dt) {
-    let vxs = s.vel * Math.cos(s.theta);
-    let vys = s.vel * Math.sin(s.theta);
-    let vxg = g.vel * Math.cos(g.theta);
-    let vyg = g.vel * Math.sin(g.theta);
-    
-    let xqp = new QuinticPolynomial(s.x, vxs, g.x, vxg);
-    let yqp = new QuinticPolynomial(s.y, vys, g.y, vyg);
-
+  constructor(s, g, steps, end) {
     this.rx = [];
     this.ry = [];
 
-    for(let t = 0; t <= 1; t += dt) {
-      this.rx.push(xqp.calcPoint(t));
-      this.ry.push(yqp.calcPoint(t));
+    let vxs = s.vel * Math.sin(s.theta);
+    let vys = s.vel * Math.cos(s.theta);
+    let vxg = g.vel * Math.sin(g.theta);
+    let vyg = g.vel * Math.cos(g.theta);
+
+    let xqp = new QuinticPolynomial(s.x, vxs, g.x, vxg);
+    let yqp = new QuinticPolynomial(s.y, vys, g.y, vyg);
+
+    for(let i = 0; i <= (end ? steps : steps - 1); i++) {
+      this.rx.push(xqp.calcPoint(i / steps));
+      this.ry.push(yqp.calcPoint(i / steps));
     }
   }
 
   getPath() {
     let path = []
 
-    for(let i = 0; i < this.rx.length; i++) {
+      for(let i = 0; i < this.rx.length; i++) {
       let p = new PathPoint(this.rx[i], this.ry[i]);
       path.push(p);
     }
@@ -56,9 +56,9 @@ class QuinticSegmentPlanner {
 
 class QuinticPathPlanner {
 
-  constructor(points, dt=0.01, slopeScalar=0.8) {
+  constructor(points, steps, slopeScalar=0.8) {
     this.points = points;
-    this.dt = dt;
+    this.steps = steps;
     this.slopeScalar = slopeScalar;
     this._generateVelocities();
     this._generatePath();
@@ -85,15 +85,14 @@ class QuinticPathPlanner {
   _generatePath() {
     if(this.points.length == 2) {
       let [p1, p2] = this.points;
-      let segment = new QuinticSegmentPlanner(p1, p2, this.dt);
-
+      let segment = new QuinticSegmentPlanner(p1, p2, this.steps, true);
       this.path = segment.getPath();
     } else {
       this.path = [];
       for(let i = 0; i < this.points.length - 1; i++) {
         let p1 = this.points[i];
         let p2 = this.points[i+1];
-        let segment = new QuinticSegmentPlanner(p1, p2, this.dt);
+        let segment = new QuinticSegmentPlanner(p1, p2, this.steps, i >= this.points.length - 2);
         let segmentPath = segment.getPath();
         segmentPath.forEach(node => {
           node.setSegmentIndex(i);
@@ -102,4 +101,16 @@ class QuinticPathPlanner {
       }
     }
   }
+}
+
+const angleBetweenPointsSpline = (current, target) =>
+  rollAngle180(Math.atan2(target.x - current.x, target.y - current.y));
+
+function calculateAngles(path) {
+  path[0].theta = angleBetweenPointsSpline(path[0], path[1]);
+  for(let i = 1; i < path.length - 1; i++) {
+    path[i].theta = angleBetweenPointsSpline(path[i - 1], path[i + 1]);
+  }
+  path[path.length - 1].theta = angleBetweenPointsSpline(path[path.length - 2], path[path.length - 1]);
+  return path;
 }
