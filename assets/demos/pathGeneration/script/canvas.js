@@ -459,14 +459,15 @@ function keyup(e) {
 let scrollRatio = 5;
 
 function zoom(e) {
-  if(e.ctrlKey) {
+  if (e.ctrlKey) {
     e.preventDefault();
-    if(e.originalEvent.detail > 0) {
+    if (e.originalEvent.detail > 0) {
       canvasScale -= scrollRatio;
     } else {
       canvasScale += scrollRatio;
     }
-  } else if(hovering) {
+  } else if (hovering) {
+    e.preventDefault();
     points[dragIndex].theta += 0.2 * sgn(e.originalEvent.detail);
   }
 }
