@@ -29,6 +29,7 @@ To test pursuit, I wrote a full simulation using javascript. I was able to imple
 </object> 
 
 Here are the controls:
+- Ctrl + Right-click to place robot
 - Click to place node 
 - Click and drag to move node
 - Right-click node to delete 
