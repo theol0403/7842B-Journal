@@ -7,8 +7,11 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3"
+gem "jekyll"
 
 gem 'just-the-docs', :github => 'theol0403/just-the-docs'
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'jekyll-postfiles', group: [:jekyll_plugins]
+
+gem "webrick", "~> 1.7"
+gem "bigdecimal", "~> 3.0"
