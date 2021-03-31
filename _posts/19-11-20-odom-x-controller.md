@@ -1,6 +1,6 @@
 ---
 title: Odom X Controller
-parent: Archive 2019/20
+parent: Archive
 ---
 
 Having an X-Drive allows for much more complex algorithms. Not only can it move in all directions, but it can move independently of heading. This allows the robot to drive while turning, which is very useful for competition.

@@ -1,6 +1,6 @@
 ---
 title: Pure Pursuit
-parent: Archive 2019/20
+parent: Archive
 ---
 
 Pure pursuit is a path following algorithm. Using odometry information and a path, pure pursuit controls how the robot should move to follow the path.

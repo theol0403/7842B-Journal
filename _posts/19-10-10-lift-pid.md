@@ -1,6 +1,6 @@
 ---
 title: "Lift PID"
-parent: Archive 2019/20
+parent: Archive
 ---
 
 Today I worked on the lift PID. I had to find a way to stabilize the sides.

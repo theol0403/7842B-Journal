@@ -1,6 +1,6 @@
 ---
 title: Motion Algorithms
-parent: Archive 2019/20
+parent: Archive
 ---
 
 A big focus for this year has been motion algorithms for autonomous. Motion algorithms allow for a faster, easier, and more competitive autonomous, and are really fun to make.
