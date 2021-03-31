@@ -88,7 +88,7 @@ This is a footnote [link][1]
 
 ## Images
 
-![](/assets/images/9c889ba6aa0dfbbc88b4c7d4e11407f4dfdfbe61.png)
+![](images/20210330_162158.jpg)
 
 Like links, Images also have a footnote style syntax
 

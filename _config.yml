@@ -4,11 +4,9 @@ description: >-
   7842B Digital Build & Programming Journal
 
 baseurl: ""
-url: "https://theol0403.github.io/7842B-Journal"
-images_url: "https://theol0403.github.io/7842B-Journal/assets/images"
+url: ""
 
-github_username: theol0403
-remote_theme: theol0403/just-the-docs
+theme: just-the-docs
 
 # Just the docs
 color_scheme: "dark"

@@ -7,9 +7,8 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll"
+gem "jekyll", "~> 3"
 
-gem "just-the-docs"
+gem 'just-the-docs', :github => 'theol0403/just-the-docs'
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'jekyll-postfiles', group: [:jekyll_plugins]
