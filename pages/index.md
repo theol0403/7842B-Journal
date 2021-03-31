@@ -9,7 +9,9 @@ has_toc: false
 
 # 7842B Digital Engineering Journal
 
-This is the **2020/2021 Digital Engineering Journal** for VEX team **7842B**{: .bteam}, during the **Change Up** season.
+Welcome to the **2020/2021 Digital Engineering Journal** for VEX team **7842B** in the **Change Up** season.
+
+![]({{site.url}}/assets/images/20210330_162158.jpg){:height="40%" width="40%"}
 
 We are a two-person team, consisting of:
 

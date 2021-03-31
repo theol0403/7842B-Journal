@@ -12,3 +12,4 @@ gem "jekyll"
 
 gem "just-the-docs"
 gem 'jekyll-compose', group: [:jekyll_plugins]
+gem 'jekyll-postfiles', group: [:jekyll_plugins]
