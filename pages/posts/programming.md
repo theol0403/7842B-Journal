@@ -3,18 +3,17 @@ layout: default
 title: Programming
 nav_order: 3
 permalink: programming
-search_exclude: true
 has_children: true
 has_toc: false
 ---
 
 # Programming Journal
 
-Hello! I'm **Theo Lemay**, and this is my digital programming journal for the 2020/2021 **Change Up** season.
+Hello! I'm **Theo Lemay**, and this is my **digital programming journal** for the 2020/2021 **Change Up** season.
 
-My primary role on the team is to design **driver controls**, design autonomous **motion control algorithms**, and design and develop a 1-minute **autonomous skills routine**. I also assist with building and driving.
+My primary role on the team is to design **driver controls**, design autonomous **motion control algorithms**, and design and develop **autonomous skills routines**. I also assist with building and driving.
 
-In the Change Up season, I have invested the majority of my time on three major tasks:
+This season, I have invested the majority of my time on three major tasks:
 
 ### Intake Control
 
