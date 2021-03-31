@@ -7,9 +7,9 @@ permalink: /
 has_toc: false
 ---
 
-# 7842F Programming Journal
+# 7842B Digital VEX Journal
 
-Hey! I'm Theo, the programmer for team 7842F. This is my journal where I keep programming logs of my progress and ideas, and where I work on some documentation for my code.
+Hey! I'm Theo, the programmer for team 7842B. This is my journal where I keep programming logs of my progress and ideas, and where I work on some documentation for my code.
 
 ---
 
@@ -22,5 +22,3 @@ Hey! I'm Theo, the programmer for team 7842F. This is my journal where I keep pr
 [Home]({{site.url}}){: .btn }
 [lib7842]({{site.url}}/lib7842){: .btn }
 [Posts]({{site.url}}/posts){: .btn }
-
-

@@ -250,7 +250,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll (~> 3.8.0)
+  jekyll
   jekyll-compose
   just-the-docs
 

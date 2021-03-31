@@ -1,6 +1,7 @@
 ---
 title: 2018-19 Showcase
 nav_order: 100
+parent: Archive
 ---
 
 Hello everyone!
