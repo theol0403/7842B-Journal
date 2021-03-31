@@ -3,7 +3,7 @@ email: theol0403@gmail.com
 description: >-
   7842B Digital Build & Programming Journal
 
-baseurl: ""
+baseurl: "7842B-Journal/"
 url: ""
 
 theme: just-the-docs
