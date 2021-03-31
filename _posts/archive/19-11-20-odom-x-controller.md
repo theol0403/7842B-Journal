@@ -11,7 +11,7 @@ As of writing this, none of my autonomous programs use any turn commands, becaus
 
 I have made a function that allows me to tell the robot to drive in a certain direction. Using this math I can tell the chassis to strafe at a certain direction and speed.
 
-<img src="{{site.url}}/assets/images/image-20191115150107968.png" width="70%" />
+<img src="images/image-20191115150107968.png" width="70%" />
 
 Here is the lib7842 implementation of this functionality:
 

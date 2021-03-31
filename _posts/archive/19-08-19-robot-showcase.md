@@ -28,7 +28,7 @@ Throughout the TP season, we stuck with a flywheel design. We improved and upgra
 
 In all our designs, we needed to be able to control the flywheel speed as precisely and consistently as possible. It was also crucial that the flywheel was able to regain its speed as fast as possible after a ball was shot. Since we were using the Cortex system during the development of our flywheel control system, we were able to take advantage of RobotC’s amazing debugger system and graph our flywheel performance.
 
-![]({{site.url}}/assets/images/df0e6d88140f8546448a59f56c5e3e27b7ea0086.png)
+![](images/df0e6d88140f8546448a59f56c5e3e27b7ea0086.png)
 
 ## Traditional Control
 
@@ -54,7 +54,7 @@ However, feedforward can’t do all the work. The velocity might not be linear t
 
 The signal coming in from flywheel velocity calculations are quite noisy if you want them to be up-to-date. When the algorithm sees this noise, and kP is high, this translates to noise in the output signal. This means the motor starts oscillating, which translates to real flywheel oscillation. This translates into an even more noisy signal going into the PID, causing a vicious cycle of oscillation.
 
-![]({{site.url}}/assets/images/15b2a754f4f350d137581f66d2aba30053600d53.png)
+![](images/15b2a754f4f350d137581f66d2aba30053600d53.png)
 
 ## Signal EMA Filtering
 
@@ -64,7 +64,7 @@ To solve this issue, the input signal needs to be smoothed. For this, I use an E
 
 EMA takes the flywheel reading over time and strikes a balance between taking into account the new reading and keeping the old one. If you overuse EMA, it will cause the signal to be unresponsive and outdated, causing more oscillation, so it is important to use just the right amount to smooth noise.
 
-![]({{site.url}}/assets/images/bb0ea04b713185444d7fca2f8c4ddabd1babc4c5.png)
+![](images/bb0ea04b713185444d7fca2f8c4ddabd1babc4c5.png)
 
 Now that EMA causes the input signal to be smooth, the output power will also be steady. This is exactly what we want when controlling a flywheel: smooth, steady power. Now that the input noise and oscillations are damped and filtered out, I can use a large kP gain to be as precise as possible without fearing oscillation.
 
@@ -76,7 +76,7 @@ When the flywheel shoots a ball, I want the flywheel to recover as quickly as po
 
 I don’t just want the D to kick in while the flywheel is slowing down, I also want it to linger a bit after the shot to provide an extra boost. To do this, I also apply an EMA filter on the D. Filtering D is common practice, as it makes D have time to affect the output instead of being there for only a few timeslices. Without filtering, it only acts against the change of motion exactly when it detects it, so in the case of a flywheel, when you shoot a ball, the only effect D will have is exactly when the flywheel is slowing down. With filtering, D lingers a bit after the initial high rate of change.
 
-![]({{site.url}}/assets/images/686ef1df5e89c59d5ffba8ce6e989c04b856d627.png)
+![](images/686ef1df5e89c59d5ffba8ce6e989c04b856d627.png)
 
 As you can see, using a filtered D allows the flywheel to resume target speed as fast as possible.
 
@@ -86,7 +86,7 @@ Finally, to protect the motors, I apply a one-way slew rate to the output power.
 
 If you look at most of the above graphs, you can see that the initial acceleration of the motor power is gradual. In the following graph, look at how the motor power (green) is limited and ramps up slowly even though the PID would have it at full power instantly.
 
-![]({{site.url}}/assets/images/57f1f41d332d5f4f54282d68def5251fe659f9ce.png)
+![](images/57f1f41d332d5f4f54282d68def5251fe659f9ce.png)
 
 Slew rate can be implemented with a simple algorithm. Here is the pseudocode:
 
@@ -104,13 +104,13 @@ V1: <https://youtu.be/SaY6B3MW3AI>
 
 V2:
 
-![]({{site.url}}/assets/images/335d3f70d86f4b894894d7f841c9b90bb2e990a4.png)
+![](images/335d3f70d86f4b894894d7f841c9b90bb2e990a4.png)
 
 I also made a graphing utility to visualize the flywheel performance:
 
-![]({{site.url}}/assets/images/d17956bd31e32cf2ee78bc6b0df03102c37276d5.png)
+![](images/d17956bd31e32cf2ee78bc6b0df03102c37276d5.png)
 
-![]({{site.url}}/assets/images/e41cc59a82583477e17fac4b19b175a98e541786.png)
+![](images/e41cc59a82583477e17fac4b19b175a98e541786.png)
 
 ## V5 Flywheel Datalogging
 
@@ -156,11 +156,11 @@ Our worlds robot had a 2m flywheel. However, we also wanted a 4m base, an intake
 
 We needed smaller and more compact ratchets than was provided by VEX, so Jacob designed a custom ratchet and submitted it to the CAD online challenge: <https://challenges.robotevents.com/challenge/94/entry/6325>
 
-![]({{site.url}}/assets/images/9c889ba6aa0dfbbc88b4c7d4e11407f4dfdfbe61.png)
+![](images/9c889ba6aa0dfbbc88b4c7d4e11407f4dfdfbe61.png)
 
 He then expanded that system by making a compact double ratchet.
 
-![]({{site.url}}/assets/images/937d3e80542cc1884d9393662248a1a56c1e6336.png)
+![](images/937d3e80542cc1884d9393662248a1a56c1e6336.png)
 
 The angler is ratcheted so it can only be moved forward. When the angler reaches the maximum position, a slip gear brings the angler back to the resting position.
 
@@ -193,11 +193,11 @@ We decided to have 4 shooting positions:
 
 If we were on the near starting tile, we could also turn and shoot across the court using angler position 3 and 4.
 
-![]({{site.url}}/assets/images/0e8c61d1a4b57b341f6adb26a376512251f4adb3.jpeg)
+![](images/0e8c61d1a4b57b341f6adb26a376512251f4adb3.jpeg)
 
 Having these positions tuned allowed us to do some pretty cool shots:
 
-![]({{site.url}}/assets/images/613c557f10f660126acf4fbc4eb06f7ede9d0cc6.gif)
+![](images/613c557f10f660126acf4fbc4eb06f7ede9d0cc6.gif)
 
 ## Driver Interface/Controller Mapping
 
@@ -211,11 +211,11 @@ After the driver lined up for the shot, I would press the shoot button, which wo
 
 Here is our controller mapping:
 
-![]({{site.url}}/assets/images/653946fc168116e48a504b016bfe568903a863eb.png)
+![](images/653946fc168116e48a504b016bfe568903a863eb.png)
 
 I also have a display on the controller that gives me some useful information:
 
-![]({{site.url}}/assets/images/43b362cf717a930f5bce1a9f2da904e4de51225d.png)
+![](images/43b362cf717a930f5bce1a9f2da904e4de51225d.png)
 
 It tells me which distance and which flag is selected, whether the flywheel is at target velocity, the time left in the match, the robot’s battery, and the controller ID. This display was useful for driving at competitions. A copy of this screen is also on the master controller.
 
@@ -223,7 +223,7 @@ It tells me which distance and which flag is selected, whether the flywheel is a
 
 To tune the hood angles I experimented with various options. I tried using the controller buttons to tune the angles and writing logs to the SD or the terminal, and making a GUI. They all worked to some extent, but the controller was awkward so I stuck with the GUI option, as it was the most flexible and fast to use.
 
-![]({{site.url}}/assets/images/eeb970132d8f094924fb07c8a2f2340752e1bf3b.png)
+![](images/eeb970132d8f094924fb07c8a2f2340752e1bf3b.png)
 
 The `Dist` buttons allowed me to control which distance setting to change the angles for, and the `Top` and `Mid` buttons allowed me to adjust the angles for that distance. The visualization in the middle of the GUI shows the hood angles - white is the hood’s current angle, and black and blue are the top and mid angles, respectively.
 
@@ -303,13 +303,13 @@ This past year we have developed odometry for our robot. Odometry is the act of 
 
 We used 2 free-spinning tracking wheels on our robot. Tracking wheels are designed to give the most precision to odometry as possible, as powered wheels can slip and are not as precise. We opted not to use a third tracking wheel because we did not have physical space to put it and we didn’t have any extra sensor ports. If possible I would recommend having a third wheel, as we had some consistency issues/drift because the tracking wheels would sometimes slide sideways.
 
-![]({{site.url}}/assets/images/3df2b6d09303f100128a6fd236f1d8098ff76ef5.png)
+![](images/3df2b6d09303f100128a6fd236f1d8098ff76ef5.png)
 
 ## Odometry Debugging
 
 Odometry is one of the most difficult things to diagnose if something goes wrong. You don’t know if the wheels failed, if the sensors failed, or if the code is wrong, and in what way. To help alleviate some of that pain, I wrote a GUI utility that helped us pinpoint problems.
 
-![]({{site.url}}/assets/images/a9bb86a3bee3f1a933ef23f0b38513cdcad5a02a.png)
+![](images/a9bb86a3bee3f1a933ef23f0b38513cdcad5a02a.png)
 
 With this, you can try moving the robot in a straight line and see if one sensor is lagging behind the other, or to see if the tracking algorithm is broken. As a tool to help others (and as an incentive to help test OkapLib v4’s beta odometry system), I have published the code for this.
 
@@ -334,7 +334,7 @@ The first was that the algorithm had to be terminated when the robot reached the
 
 The second problem with this method is that it is not the most efficient. If the robot was perpendicular to the target, the distance PID would output full power, even though moving forward is the wrong thing to do.
 
-![]({{site.url}}/assets/images/4c657dbc37e8ba9aa90ca55b61b76f05335459d1.png)
+![](images/4c657dbc37e8ba9aa90ca55b61b76f05335459d1.png)
 
 Instead, I wanted an algorithm that prioritized turning over moving, and that only moves when doing so would make the robot get nearer to the target.
 
@@ -344,19 +344,19 @@ I posed this question: “If the robot is locked to its current heading, so it c
 
 If the robot was perpendicular to the target, the answer would be 0. But as the robot rotates to face the target, the answer becomes more and more. Here are some images illustrating the question (the answer is the length of the red line):
 
-![]({{site.url}}/assets/images/d540e20cfe7ba1395aed7a1ecdab796141a108c0.png)
+![](images/d540e20cfe7ba1395aed7a1ecdab796141a108c0.png)
 
 With the help of others, I was able to implement the math for this. When doing distance PID on the output of these calculations, the robot was able to move much more efficiently. I also had to implement some logic to be able to drive backward. The reason this algorithm works great for settling is that if I turn off the angle PID when the robot is a certain distance away from the target, the adaptive distance PID brings the robot to a settled stop, giving a negative signal to back up.
 
 To test this algorithm, I (with some help) made a javascript simulation. You can see how the robot prefers turning over driving, and how it settles smoothly.
 
-![]({{site.url}}/assets/images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
+![](images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
 
 ## Autonomous Code
 
 Once I had the tracking and movement completed, it was time to make an API for me to use for writing autonomous programs. I wanted something flexible, abstract, and feature-packed. Here is what I ended up with:
 
-![]({{site.url}}/assets/images/75f860bcd91c27056889510755753716d9641631.png)
+![](images/75f860bcd91c27056889510755753716d9641631.png)
 
 ## Settling
 
@@ -387,7 +387,7 @@ For simplicity, I also made a few helper functions - `turnToAngle(angle)`, `turn
 
 All the movement functions are blocking, but I still wanted to be able to trigger actions such as moving an arm in the middle of a movement. To do this I developed a system called AsyncAction, which requires a trigger (ex. min distance to point) and executes an action (ex. moves arm). In autonomous, used it to turn on the ball intake right when the robot reached the ball.
 
-![]({{site.url}}/assets/images/44df1fcc5ac2962d52ed66e05f9c7f9b921a7242.png)
+![](images/44df1fcc5ac2962d52ed66e05f9c7f9b921a7242.png)
 
 ## Emergency Abort
 
@@ -447,7 +447,7 @@ Throughout the season Jacob did an amazing job of documenting our progress. He m
 
 I hope these journals are a great resource and that they provide a good learning opportunity! My favourite pages are the last 40 of the project journal.
 
-![]({{site.url}}/assets/images/9f6cc7844d169ba4d7a7665bba1f120bce1d850b.jpeg)
+![](images/9f6cc7844d169ba4d7a7665bba1f120bce1d850b.jpeg)
 
 There are higher and lower-resolution versions, and the original images, available [here](https://drive.google.com/drive/folders/1d5pq-xX7hGxc8Jjt8pD240M9AHUl8COj?usp=sharing). Enjoy!
 

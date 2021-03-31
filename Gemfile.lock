@@ -79,12 +79,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bigdecimal (~> 3.0)
+  bigdecimal
   jekyll
   jekyll-compose
   jekyll-postfiles
   just-the-docs!
-  webrick (~> 1.7)
+  webrick
 
 BUNDLED WITH
    2.2.15

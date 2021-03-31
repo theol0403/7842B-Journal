@@ -17,15 +17,15 @@ A great paper on adaptive pure pursuit can be found [here](https://www.chiefdelp
 
 Pure pursuit works by finding a _lookahead_ on the path. It does this by finding the intersection of a circle of a given radius with the path. Then, the robot seeks the lookahead by calculating curvature and velocity to reach the lookahead.
 
-![]({{site.url}}/assets/images/pure-pursuit.png)
+![](images/pure-pursuit.png)
 
-<img src="{{site.url}}/assets/images/lookahead.png" width="30%" />
+<img src="images/lookahead.png" width="30%" />
 
 ## Implementing Pure Pursuit
 
 To test pursuit, I wrote a full simulation using javascript. I was able to implement all the logic and optimization in that controlled environment. Implementing algorithms in javascript is very useful, as it provides a visual way of testing the algorithm and the code can translate to C++ quite easily. This algorithm has been in progress since June 2019.
 
-<object width="100%" height="500" data="{{site.url}}/assets/demos/pathGeneration/index.html"> 
+<object width="100%" height="500" data="demos/pathGeneration/index.html"> 
 </object>
 
 Here are the controls:

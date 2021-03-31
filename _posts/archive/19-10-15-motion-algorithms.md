@@ -13,7 +13,7 @@ To be able to execute complex movements that are not straight lines, we need to 
 
 To do this, we used an odometry algorithm provided by team [5225A](https://www.vexforum.com/t/team-5225-introduction-to-position-tracking-document/49640). With the use of three freely-spinning **tracking wheels**, we are able to use trigonometry to calculate the absolute position of the robot in the field.
 
-<img src="{{site.url}}/assets/images/image-20191115144427806.png" width="80%" />
+<img src="images/image-20191115144427806.png" width="80%" />
 
 {% comment %}
 TODO: Robot Image
@@ -45,4 +45,4 @@ Since we have an X-Drive robot, we can often combine driving and turning into a 
 
 Since we use odometry and motion algorithms to tell the robot to go to certain coordinates, we can much more easily plan autonomous programs using a map. We overlaid a coordinate system over a top-down view of the field, so we can simply plot and record points:
 
-<img src="{{site.url}}/assets/images/field planning.png" width="70%" />
+<img src="images/field planning.png" width="70%" />

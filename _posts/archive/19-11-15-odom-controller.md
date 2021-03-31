@@ -26,7 +26,7 @@ However, when calculating distance to a point (using Pythagoras), you can’t kn
 
 The second problem with this method is that it is not the most efficient. If the robot was perpendicular to the target, the distance PID would output full power, even though moving forward is the wrong thing to do.
 
-![]({{site.url}}/assets/images/4c657dbc37e8ba9aa90ca55b61b76f05335459d1.png)
+![](images/4c657dbc37e8ba9aa90ca55b61b76f05335459d1.png)
 
 Instead, I wanted an algorithm that prioritized turning over moving, and that only moves when doing so would make the robot get nearer to the target.
 
@@ -36,7 +36,7 @@ I posed this question: “If the robot is locked to its current heading, so it c
 
 If the robot was perpendicular to the target, the answer would be 0. But as the robot rotates to face the target, the answer becomes more and more. Here are some images illustrating the question (the answer is the length of the red line):
 
-![]({{site.url}}/assets/images/d540e20cfe7ba1395aed7a1ecdab796141a108c0.png)
+![](images/d540e20cfe7ba1395aed7a1ecdab796141a108c0.png)
 
 After some research and help, I was able to implement the math for this. When doing distance PID on the output of these calculations, the robot was able to move much more efficiently. I also had to implement some logic to be able to drive backward.
 
@@ -44,8 +44,8 @@ The reason this algorithm works great for settling is that if I turn off the ang
 
 To test this algorithm, I made a javascript simulation. You can see how the robot prefers turning over driving, and how it settles smoothly:
 
-<object id="demoBorder" width="100%" height="300" data="{{site.url}}/assets/demos/adaptiveSeek.html"> 
-    ![]({{site.url}}/assets/images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
+<object id="demoBorder" width="100%" height="300" data="demos/adaptiveSeek.html"> 
+    ![](images/479e47a7761f01d48f5c41f49bfbaeaf4f75f1c8.gif)
 </object>
 
 ## Settling
