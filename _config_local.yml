@@ -1,0 +1,30 @@
+title: 7842B Journal
+email: theol0403@gmail.com
+description: >-
+  7842B Digital Build & Programming Journal
+
+baseurl: ""
+url: "/"
+
+theme: just-the-docs
+
+# Just the docs
+color_scheme: "dark"
+search_enabled: true
+search_tokenizer_separator: /[\s/]+/
+heading_anchors: true
+footer_content: "Copyright &copy; 2020-2021"
+
+#aux_links:
+#  "Build": "/build"
+#  "Programming": "/programming"
+
+permalink: /:categories/:year-:month-:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      grand_parent: All Posts
