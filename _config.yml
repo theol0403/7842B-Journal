@@ -1,12 +1,13 @@
-title: 7842F Journal
+title: 7842B Journal
 email: theol0403@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  7842F Programming Journal, Showcase, and Documentation
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://theol0403.github.io/7842F-Programming-Journal" # the base hostname & protocol for your site, e.g. http://example.com
-images_url: "https://theol0403.github.io/7842F-Programming-Journal/assets/images" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: theol0403
+description: >-
+  7842B 2020/2021 Build & Programming Digital Journal
 
+baseurl:
+url: "https://theol0403.github.io/7842B-Journal"
+images_url: "https://theol0403.github.io/7842B-Journal/assets/images"
+
+github_username: theol0403
 remote_theme: theol0403/just-the-docs
 
 # Just the docs
@@ -14,11 +15,8 @@ color_scheme: "dark"
 search_enabled: true
 search_tokenizer_separator: /[\s/]+/
 heading_anchors: true
-footer_content: "Copyright &copy; 2019-2020 Theo Lemay"
+footer_content: "Copyright &copy; 2020-2021"
 aux_links:
-  "lib7842": "//github.com/theol0403/lib7842"
-  "Tower": "//github.com/theol0403/7842F-Tower-Code"
-  "Github": "//github.com/theol0403/7842F-Programming-Journal"
 
 permalink: /:categories/:year-:month-:day/:title/
 
