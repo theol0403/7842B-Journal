@@ -10,19 +10,34 @@ has_toc: false
 
 # Programming Journal
 
-Hello! I'm **Theo Lemay**, and this is my digital programming journal for the 2020/2021 **Change Up** season. 
+Hello! I'm **Theo Lemay**, and this is my digital programming journal for the 2020/2021 **Change Up** season.
 
-My primary role on the team is to design driver controls, design autonomous motion control algorithms, and design and develop a 1-minute "Autonomous Skills" routine. I also assist with building and driving of the robot.
+My primary role on the team is to design **driver controls**, design autonomous **motion control algorithms**, and design and develop a 1-minute **autonomous skills routine**. I also assist with building and driving.
 
-In the Change Up season, I have been investing the majority of my time on **three major topics**:
-- Designing controls for the robot's intakes to make it as easy as possible to drive
-	- Developing an intuitive and versatile **driver control scheme**
-	- Implementing a **statemachine controller** that combines driver and sensor input to achieve smooth and intuitive ball handling
-	- Using sensors to **automate features** like "autopooping", which is the automatic disposal of unwanted balls   
-- Designing **motion algorithms** for the robot to navigate during autonomous
-	- Developing smooth, repeatable, and powerful motion controllers, for **fast and optimal** movement
-	- Using sensors to **improve reliability**
-- Planning an autonomous routine, making best possible use of the robot
+In the Change Up season, I have invested the majority of my time on three major tasks:
+
+### Intake Control
+
+- Develop an intuitive and versatile **driver control scheme** for the **robot intakes** that make it easy to drive.
+- Implement a **statemachine** controller that combines driver and sensor input to achieve smooth and intuitive ball handling.
+- Use sensors to **automate features** like **autopooping**, which is the automatic disposal of unwanted balls.
+
+[Intake Control]({{site.url}}/programming/intake){: .btn }
+
+### Motion Control
+
+- Develop smooth, repeatable, and powerful motion algorithms, for **fast and optimal** navigation during autonomous.
+- Use sensors to **improve reliability**, like **localization**, **vision seeking**, and **velocity control**.
+
+[Motion Control]({{site.url}}/programming/motion){: .btn }
+
+### Programming Skills
+
+- Design and implement **programming skills runs** that are consistent and fast.
+
+[Programming Skills]({{site.url}}/programming/skills){: .btn }
+
+---
 
 <h2 class="text-delta">Table of contents</h2>
 
