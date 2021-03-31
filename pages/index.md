@@ -9,7 +9,7 @@ has_toc: false
 
 <h1> <span class="bteam">7842B</span> Digital Engineering Journal </h1>
 
-This is the **2020/2021 Digital Engineering Journal** for team **7842B**{: class="bteam"}.
+This is the **2020/2021 Digital Engineering Journal** for team **7842B**{: class="bteam"}, during the **VEX Change Up** season.
 
 We are a two-person team, consisting of:
 

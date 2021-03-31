@@ -88,7 +88,7 @@ This is a footnote [link][1]
 
 ## Images
 
-![Image Ratchet](/assets/images/9c889ba6aa0dfbbc88b4c7d4e11407f4dfdfbe61.png)
+![](/assets/images/9c889ba6aa0dfbbc88b4c7d4e11407f4dfdfbe61.png)
 
 Like links, Images also have a footnote style syntax
 
