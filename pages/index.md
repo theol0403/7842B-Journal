@@ -7,18 +7,35 @@ permalink: /
 has_toc: false
 ---
 
-# 7842B Digital VEX Journal
+<h1> <span class="bteam">7842B</span> Digital Engineering Journal </h1>
 
-Hey! I'm Theo, the programmer for team 7842B. This is my journal where I keep programming logs of my progress and ideas, and where I work on some documentation for my code.
+This is the **2020/2021 Digital Engineering Journal** for team **7842B**{: class="bteam"}.
+
+We are a two-person team, consisting of:
+
+- **Sawyer McClellan** - Builder
+- **Theo Lemay** - Programmer
+
+This is a joint digital journal, with sections for building and programming.
+
+[Build Journal]({{site.url}}/build){: .btn }
+[Programming Journal]({{site.url}}/programming){: .btn }
+
+Parts of the code used for the robot is built on previous years work, so relevant journal entries are kept in archive.
+
+[Programming Archive]({{site.url}}/archive){: .btn }
 
 ---
 
-## Journal Layout:
+## All Posts
 
-- Concepts and ideas will be documented under `Home`.
-- lib7842 documentation will be in `lib7842`.
-- Daily logs and progress will be recorded in `Posts`.
+<h2 class="text-delta">Table of contents</h2>
 
-[Home]({{site.url}}){: .btn }
-[lib7842]({{site.url}}/lib7842){: .btn }
-[Posts]({{site.url}}/posts){: .btn }
+<ul id="markdown-toc">
+	{% for post in site.posts %}
+	<li>
+		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
+		- {{ post.date | date_to_long_string }}
+	</li>
+	{% endfor %}
+</ul>

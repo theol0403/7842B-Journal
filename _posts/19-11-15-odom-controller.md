@@ -1,7 +1,6 @@
 ---
 title: Odom Controller
-parent: lib7842
-nav_order: 1
+parent: Archive 2019/20
 ---
 
 In order to move to specific coordinates, I needed to design a versatile controller to allow me to tell the robot to drive to a point, using odometry information. This is quite a complex task, as it involves moving the robot in two dimensions while being efficient.
