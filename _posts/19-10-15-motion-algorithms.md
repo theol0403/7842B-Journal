@@ -5,7 +5,7 @@ parent: Programming
 
 A big focus for this year has been motion algorithms for autonomous. Motion algorithms allow for a faster, easier, and more competitive autonomous, and are really fun to make.
 
-This year, we have built an **X-Drive** robot, which opens up a wide range of possibilities for control. Having a holonomic chassis means that we can have *heading-agnostic* movement functions, meaning that we can drive any direction while facing any angle. This opens up possibilities for turning while driving, and also makes driving to points much easier as the heading of the robot is independent from movement.
+This year, we have built an **X-Drive** robot, which opens up a wide range of possibilities for control. Having a holonomic chassis means that we can have _heading-agnostic_ movement functions, meaning that we can drive any direction while facing any angle. This opens up possibilities for turning while driving, and also makes driving to points much easier as the heading of the robot is independent from movement.
 
 ### Odometry
 
@@ -15,8 +15,8 @@ To do this, we used an odometry algorithm provided by team [5225A](https://www.v
 
 <img src="{{site.url}}/assets/images/image-20191115144427806.png" width="80%" />
 
-{% comment %} 
-TODO: Robot Image 
+{% comment %}
+TODO: Robot Image
 {% endcomment %}
 
 A very useful trick we have learned is to calculate the robot's absolute heading, we can use the following formula:

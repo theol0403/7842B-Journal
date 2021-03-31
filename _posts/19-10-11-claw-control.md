@@ -3,7 +3,7 @@ title: "Claw Control"
 parent: Programming
 ---
 
-Today I had to figure out claw mapping and control. Our claw has an individual motor for each side of the claw, so I decided to keep the two sides completely separate. I wrote a statemachine that is used for both sides of the claw. 
+Today I had to figure out claw mapping and control. Our claw has an individual motor for each side of the claw, so I decided to keep the two sides completely separate. I wrote a statemachine that is used for both sides of the claw.
 When the driver releases buttons that either open or close the claw, it brakes the claw to prevent it from coasting.
 
 ```cpp
@@ -32,7 +32,7 @@ case clawStates::brake: claw->moveVelocity(0); break;
 
 Finally, here is the driver control layout for a single claw:
 
-```cpp 
+```cpp
 if (mDigital(L2) && mDigital(L1)) {
   leftClawState = clawStates::off;
 } else if (mDigital(L2)) {
@@ -48,4 +48,3 @@ if (leftClawState != lastLeftClawState) {
   lastLeftClawState = leftClawState;
 }
 ```
-

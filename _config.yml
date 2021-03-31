@@ -1,12 +1,13 @@
 title: 7842F Journal
 email: theol0403@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  7842F Programming Journal, Showcase, and Documentation 
+  7842F Programming Journal, Showcase, and Documentation
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://theol0403.github.io/7842F-Programming-Journal" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  theol0403
+images_url: "https://theol0403.github.io/7842F-Programming-Journal/assets/images" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: theol0403
 
-remote_theme: pmarsceill/just-the-docs
+remote_theme: theol0403/just-the-docs
 
 # Just the docs
 color_scheme: "dark"
@@ -22,9 +23,9 @@ aux_links:
 permalink: /:categories/:year-:month-:day/:title/
 
 defaults:
-- scope:
-    path: ""
-    type: "posts"
-  values:
-    layout: "post"
-    grand_parent: All Posts
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      grand_parent: All Posts

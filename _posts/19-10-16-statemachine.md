@@ -98,4 +98,3 @@ protected:
   bool _isDone = false;
 };
 ```
-

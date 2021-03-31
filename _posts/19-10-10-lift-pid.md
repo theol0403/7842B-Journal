@@ -82,4 +82,3 @@ case liftStates::bottom:
   lift[1]->moveVoltage(pid[1]->step(getPosition()[1]) * 12000);
   break;
 ```
-

@@ -4,7 +4,7 @@ parent: lib7842
 nav_order: 2
 ---
 
-Having an X-Drive allows for much more complex algorithms. Not only can it move in all directions, but it can move independently of heading. This allows the robot to drive while turning, which is very useful for competition. 
+Having an X-Drive allows for much more complex algorithms. Not only can it move in all directions, but it can move independently of heading. This allows the robot to drive while turning, which is very useful for competition.
 
 As of writing this, none of my autonomous programs use any turn commands, because all the required turning is handled while driving.
 
@@ -15,6 +15,7 @@ I have made a function that allows me to tell the robot to drive in a certain di
 <img src="{{site.url}}/assets/images/image-20191115150107968.png" width="70%" />
 
 Here is the lib7842 implementation of this functionality:
+
 ```cpp
 /**
  * Control the chassis movement for an XDrive using voltage. Strafes at the given voltage in the
@@ -40,7 +41,7 @@ I can then use the above function to apply the PID output to the desired directi
 
 ## Turning While Driving
 
-Using the above calculations, turning while driving is quite easy to implement. I simply use an `AngleCalculator` to calculate the desired turning amount. I apply PID to the output of the `AngleCalculator`, and then combine that with the output of the movement command. 
+Using the above calculations, turning while driving is quite easy to implement. I simply use an `AngleCalculator` to calculate the desired turning amount. I apply PID to the output of the `AngleCalculator`, and then combine that with the output of the movement command.
 
 Using an `AngleCalculator` to calculate the desired angle is quite useful, as I can use it to tell the robot to face a point or angle while driving, as well as turn while driving.
 

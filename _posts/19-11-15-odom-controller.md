@@ -21,7 +21,7 @@ While this algorithm works decently well, it is quite slow and is not able to dy
 
 The first algorithm I tried was PID. The distance and angle to the target would be sent to 2 PID controllers, and then the outputs would be combined. There were two problems with this method.
 
-The first was that the algorithm had to be terminated when the robot reached the general vicinity of the target, or else the robot would start having a spasm. This is because the PID needs to have a negative input signal to be able to back up and settle. 
+The first was that the algorithm had to be terminated when the robot reached the general vicinity of the target, or else the robot would start having a spasm. This is because the PID needs to have a negative input signal to be able to back up and settle.
 
 However, when calculating distance to a point (using Pythagoras), you can’t know when you overshoot the target. Therefore, the robot could only move forward, so when it reaches **and overshoots** the target, the angle to the target flips 180 degrees and the distance PID goes full throttle.
 
@@ -32,13 +32,14 @@ The second problem with this method is that it is not the most efficient. If the
 Instead, I wanted an algorithm that prioritized turning over moving, and that only moves when doing so would make the robot get nearer to the target.
 
 ## Adaptive PID Seeking
+
 I posed this question: “If the robot is locked to its current heading, so it can only move forward/backward, how can it move in a straight line to get closest to the point as possible?”.
 
 If the robot was perpendicular to the target, the answer would be 0. But as the robot rotates to face the target, the answer becomes more and more. Here are some images illustrating the question (the answer is the length of the red line):
 
 ![]({{site.url}}/assets/images/d540e20cfe7ba1395aed7a1ecdab796141a108c0.png)
 
-After some research and help, I was able to implement the math for this. When doing distance PID on the output of these calculations, the robot was able to move much more efficiently. I also had to implement some logic to be able to drive backward. 
+After some research and help, I was able to implement the math for this. When doing distance PID on the output of these calculations, the robot was able to move much more efficiently. I also had to implement some logic to be able to drive backward.
 
 The reason this algorithm works great for settling is that if I turn off the angle PID when the robot is a certain distance away from the target, the adaptive distance PID brings the robot to a settled stop, giving a negative signal to back up.
 
@@ -49,15 +50,17 @@ To test this algorithm, I made a javascript simulation. You can see how the robo
 </object>
 
 ## Settling
+
 Every single autonomous motion has a settling period. However, I wanted the settling to be customizable for every single command. I wanted to be able to settle a few different ways:
 
-* All PID controllers come to a rest
-* All PID controllers get to some margin of error
-* The robot gets to a certain requirement, such as a certain distance from a point or a certain angle
+- All PID controllers come to a rest
+- All PID controllers get to some margin of error
+- The robot gets to a certain requirement, such as a certain distance from a point or a certain angle
 
 To do this, I created a parameter in each movement function that accepts a special kind of function called a `Settler`. Every loop, the movement function will ask the settler “am I settled yet?” and then the function will return true when it’s conditions are met.
 
 Here is the lib7842 implementation of a `Settler`:
+
 ```cpp
 /**
  * Function that returns true to end chassis movement. Used to implement different settling methods.
@@ -66,16 +69,19 @@ using Settler = std::function<bool(const OdomController& odom)>;
 ```
 
 Then, I created a few default settling functions and added the functionality to generate new settling functions on the fly. For example, here is a command with a settler that waits for all the PID controllers to settle.
+
 ```cpp
 driveToPoint({1_ft, 1_ft}, 1, driveSettle);
 ```
-If I wanted to make the robot exit the movement when it was 4 inches away from the target, I could use a distance-based settler. 
+
+If I wanted to make the robot exit the movement when it was 4 inches away from the target, I could use a distance-based settler.
 
 ```cpp
 driveToPoint({1_ft, 1_ft}, 1, makeSettle(4_in));
 ```
 
 Here are some examples of settler creators:
+
 ```cpp
 /**
  * Make a Settler that exits when angle error is within given range
@@ -91,7 +97,8 @@ static Settler makeSettler(const QLength& distance);
 ```
 
 ## Turning
-All turning is essentially the same motion. The only difference with all possible turns is the **goal calculation** and **movement method** (point, pivot, or arc). I wanted to write only one turning algorithm, and have all the implementations plug-in. 
+
+All turning is essentially the same motion. The only difference with all possible turns is the **goal calculation** and **movement method** (point, pivot, or arc). I wanted to write only one turning algorithm, and have all the implementations plug-in.
 
 Thus I used the same modular function pattern as the settling system and added parameters in the turning function to fulfill the angle calculation and movement method. Here are a few examples of a turn command:
 
@@ -153,6 +160,7 @@ These `AngleCalculator`s will provide the foundation on which to build X-Drive c
 I also made a few helper functions to provide more expressive turning commands: `turnToAngle(angle)`, `turnAngle(angle)`, and `turnToPoint(point)`, which all just call `turn(angleCalc)` internally.
 
 ## OdomController Code:
+
 Here is the entire `OdomController` header:
 
 ```cpp
@@ -391,6 +399,7 @@ protected:
   QLength distanceErr = 0_in;
 };
 ```
+
 Here is the motion algorithm to drive to a point using the adaptive seeking method:
 
 ```cpp
