@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<title>CodePen - Drive Seek</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+</style>
+</head>
+<body translate="no">
+<canvas id="c"></canvas>
+<script id="rendered-js">
+const PI = Math.PI;
+const TAU = Math.PI * 2;
+
+const sgn = v => v > 0 ? 1 : v < 0 ? -1 : 0;
+
+const add = (a, b) => ({ x: a.x + b.x, y: a.y + b.y });
+const sub = (a, b) => ({ x: a.x - b.x, y: a.y - b.y });
+const mult = (a, b) => ({ x: a.x * b.x, y: a.y * b.y });
+const div = (a, b) => ({ x: a.x / b.x, y: a.y / b.y });
+const mag = a => Math.sqrt(a.x * a.x + a.y * a.y);
+const normalize = a => ({ x: a.x / mag(a), y: a.y / mag(a) });
+const multScalar = (a, b) => ({ x: a.x * b, y: a.y * b });
+const dot = (a, b) => a.x * b.x + a.y * b.y;
+const dist = (a, b) =>
+Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
+
+const closest = (current, head, target) => {
+  const n = normalize(head);
+  const v = sub(target, current);
+  const d = dot(v, n);
+  return add(current, multScalar(n, d));
+};
+
+const rollAngle360 = angle => angle - TAU * Math.floor(angle / TAU);
+const rollAngle180 = angle => angle - TAU * Math.floor((angle + PI) / TAU);
+
+function angleDiff(angle1, angle2) {
+  return rollAngle180(angle2 - angle1);
+}
+
+const angleBetweenPoints = (target, current) =>
+rollAngle180(Math.atan2(target.y - current.y, target.x - current.x));
+
+const angleToPoint = (target, current) =>
+rollAngle180(angleBetweenPoints(target, current) - current.a);
+
+const SPEED_LIM = 0.3;
+const TURN_MAG = 3;
+const SETTLE_RADIUS = 15; //radius from target where it gives up on turning and just goes forward
+
+// begin program
+const canvas = document.getElementById("c");
+const c = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pos = { x: 0, y: 0 };
+document.addEventListener("mousemove", e => {
+  pos = { x: e.clientX, y: e.clientY };
+});
+
+class Bot {
+  constructor(x, y, a) {
+    this.pos = {
+      x: x || canvas.width / 2,
+      y: y || canvas.height / 2,
+      a: a || PI * Math.random() * 2 - PI };
+
+    this.vel = {
+      x: 0,
+      y: 0 };
+
+    this.acc = {
+      x: 0,
+      y: 0 };
+
+    this.spd = {
+      l: 0,
+      r: 0 };
+
+  }
+
+  seek(target) {
+    const close = closest(
+    this.pos,
+    { x: Math.cos(this.pos.a), y: Math.sin(this.pos.a) },
+    pos);
+
+
+    let V = dist(close, this.pos) / 5; //slow it down so we can see decel
+    V = Math.abs(V) > 1 ? sgn(V) : V; //limit to full power
+
+    let tA = angleBetweenPoints(target, this.pos);
+
+    let aP = angleToPoint(close, this.pos);
+    if (Math.abs(aP) > PI / 2) {
+      V = V * -1;
+      tA -= PI * sgn(aP);
+    }
+
+    let W = angleDiff(tA, this.pos.a);
+    W = dist(this.pos, target) < SETTLE_RADIUS ? 0 : W;
+    let Vr = V + W * TURN_MAG;
+    let Vl = V - W * TURN_MAG;
+
+    const maxMag = Math.max(Math.abs(Vr), Math.abs(Vl));
+
+    if (maxMag > 1) {
+      Vl /= maxMag;
+      Vr /= maxMag;
+    }
+
+    this.spd = {
+      l: Vl,
+      r: Vr };
+
+
+    c.strokeStyle = "#00f";
+    c.beginPath();
+    c.moveTo(this.pos.x, this.pos.y);
+    c.lineTo(close.x, close.y);
+    c.closePath();
+    c.stroke();
+
+    c.fillStyle = "#00f";
+    c.beginPath();
+    c.arc(close.x, close.y, 3, 0, Math.PI * 2);
+    c.closePath();
+    c.fill();
+
+    c.strokeStyle = "g00";
+    c.beginPath();
+    c.moveTo(close.x, close.y);
+    c.lineTo(target.x, target.y);
+    c.closePath();
+    c.stroke();
+  }
+
+  update() {
+    c.strokeStyle = "#f00";
+    c.beginPath();
+    c.moveTo(pos.x, pos.y);
+    c.lineTo(this.pos.x, this.pos.y);
+    c.closePath();
+    c.stroke();
+
+    this.seek(pos);
+
+    let dA = (this.spd.r - this.spd.l) * SPEED_LIM / 4 / PI;
+    this.pos.a -= dA;
+    this.pos.a = rollAngle180(this.pos.a);
+
+    this.vel.x = Math.cos(this.pos.a) * (this.spd.r + this.spd.l) * SPEED_LIM;
+    this.vel.y = Math.sin(this.pos.a) * (this.spd.r + this.spd.l) * SPEED_LIM;
+
+    this.pos.x += this.vel.x;
+    this.pos.y += this.vel.y;
+  }
+
+  draw() {
+    c.fillStyle = "#000";
+    c.beginPath();
+    c.arc(this.pos.x, this.pos.y, 4, 0, Math.PI * 2);
+    c.closePath();
+    c.fill();
+
+    c.strokeStyle = "#000";
+    c.beginPath();
+    c.moveTo(this.pos.x, this.pos.y);
+    c.lineTo(
+    this.pos.x + Math.cos(this.pos.a) * 10,
+    this.pos.y + Math.sin(this.pos.a) * 10);
+
+    c.closePath();
+    c.stroke();
+
+    c.strokeStyle = "#0F0";
+    c.beginPath();
+    c.moveTo(
+    this.pos.x + Math.cos(this.pos.a + Math.PI / 2) * 10,
+    this.pos.y + Math.sin(this.pos.a + Math.PI / 2) * 10);
+
+    c.lineTo(
+    this.pos.x +
+    Math.cos(this.pos.a + Math.PI / 2) * 10 +
+    this.spd.r * 20 * Math.cos(this.pos.a),
+    this.pos.y +
+    Math.sin(this.pos.a + Math.PI / 2) * 10 +
+    this.spd.r * 20 * Math.sin(this.pos.a));
+
+    c.closePath();
+    c.stroke();
+
+    c.strokeStyle = "#0F0";
+    c.beginPath();
+    c.moveTo(
+    this.pos.x + Math.cos(this.pos.a - Math.PI / 2) * 10,
+    this.pos.y + Math.sin(this.pos.a - Math.PI / 2) * 10);
+
+    c.lineTo(
+    this.pos.x +
+    Math.cos(this.pos.a - Math.PI / 2) * 10 +
+    this.spd.l * 20 * Math.cos(this.pos.a),
+    this.pos.y +
+    Math.sin(this.pos.a - Math.PI / 2) * 10 +
+    this.spd.l * 20 * Math.sin(this.pos.a));
+
+    c.closePath();
+    c.stroke();
+  }}
+
+
+const bots = [new Bot()];
+
+// document.addEventListener("click", e => {
+//   bots.push(new Bot(e.clientX + 100, e.clientY + 100, PI));
+// });
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  c.clearRect(0, 0, canvas.width, canvas.height);
+
+  c.fillStyle = "#000";
+  c.beginPath();
+  c.arc(pos.x, pos.y, 4, 0, Math.PI * 2);
+  c.closePath();
+  c.fill();
+
+  bots.forEach(bot => {
+    bot.update();
+    bot.draw();
+  });
+}
+
+animate();
+    </script>
+
+
+</body></html>
