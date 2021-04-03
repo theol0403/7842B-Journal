@@ -4,7 +4,7 @@ description: >-
   7842B Digital Build & Programming Journal
 
 baseurl: ""
-url: "/"
+url: ""
 
 theme: just-the-docs
 
