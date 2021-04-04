@@ -9,37 +9,37 @@
   }
   ,"1": {
     "title": "Archive",
-    "content": ". . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Archive&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date_to_long_string }} | {% endfor %} .",
+    "content": ". . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Archive&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/archive",
     "relUrl": "/archive"
   }
   ,"2": {
     "title": "Build",
-    "content": "Build Journal . I’m Sawyer McClellan, and this is my digital build journal for the 2020/2021 Change Up season. . My primary role on the team is to design and build the robot and am the main driver. . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Build&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date_to_long_string }} | {% endfor %} .",
+    "content": "Build Journal . I’m Sawyer McClellan, and this is my digital build journal for the 2020/2021 Change Up season. . My primary role on the team is to design and build the robot and am the main driver. . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Build&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/build",
     "relUrl": "/build"
   }
   ,"3": {
     "title": "Home",
-    "content": "7842B Digital Engineering Journal . Welcome to the Digital Engineering Journal for VEX team 7842B in the Change Up season. . . We are a two-person team, consisting of: . Sawyer McClellan - Builder | Theo Lemay - Programmer | . This is a joint digital journal, with sections for building and programming. . Build Journal Programming Journal . Parts of the code used for the robot is built on previous years work, so relevant journal entries are kept in archive. . Tower Takeover Archive . . All Posts . . {% for post in site.posts %} {{ post.title }} - {{ post.date | date_to_long_string }} | {% endfor %} .",
+    "content": "7842B Digital Engineering Journal . Welcome to the Digital Engineering Journal for VEX team 7842B in the Change Up season. . . We are a two-person team, consisting of: . Sawyer McClellan - Builder | Theo Lemay - Programmer | . This is a joint digital journal, with sections for building and programming. . Build Journal Programming Journal . Parts of the code used for the robot is built on previous years work, so relevant journal entries are kept in archive. . Tower Takeover Archive . . All Posts . . {% for post in site.posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/",
     "relUrl": "/"
   }
   ,"4": {
     "title": "Programming",
-    "content": "Programming Journal . Hello! I’m Theo Lemay, and this is my digital programming journal for the 2020/2021 Change Up season. . My primary role on the team is to design driver controls, design autonomous motion control algorithms, and design and develop autonomous skills routines. I also assist with building and driving. . This season, I have invested the majority of my time on three major tasks: . Intake Control . Develop an intuitive and versatile driver control scheme for the robot intakes that make it easy to drive. | Implement a statemachine controller that combines driver and sensor input to achieve smooth and intuitive ball handling. | Use sensors to automate features like autopooping, which is the automatic disposal of unwanted balls. | . Intake Control . Motion Control . Develop smooth, repeatable, and powerful motion algorithms, for fast and optimal navigation during autonomous. | Use sensors to improve reliability, like localization, vision seeking, and velocity control. | . Motion Control . Programming Skills . Design and implement programming skills runs that are consistent and fast. | . Programming Skills . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Programming&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date_to_long_string }} | {% endfor %} .",
+    "content": "Programming Journal . Hello! I’m Theo Lemay, and this is my digital programming journal for the 2020/2021 Change Up season. . My primary role on the team is to design driver controls, design autonomous motion control algorithms, and design and develop autonomous skills routines. I also assist with building and driving. . This season, I have invested the majority of my time on three major tasks: . Intake Control . Develop an intuitive and versatile driver control scheme for the robot intakes that make it easy to drive. | Implement a statemachine controller that combines driver and sensor input to achieve smooth and intuitive ball handling. | Use sensors to automate features like autopooping, which is the automatic disposal of unwanted balls. | . Intake Control . Motion Control . Develop smooth, repeatable, and powerful motion algorithms, for fast and optimal navigation during autonomous. | Use sensors to improve reliability, like localization, vision seeking, and velocity control. | . Motion Control . Programming Skills . Design and implement programming skills runs that are consistent and fast. | . Programming Skills . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Programming&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/programming",
     "relUrl": "/programming"
   }
   ,"5": {
     "title": "Skills",
-    "content": "Programming Skills . I need to find the best programming skills routine. Considerations: . point turns are slow and prone to error | reducing the number of separate motions and optimizing for long, smooth motions is ideal | the locations where the robot can dispose blue balls (poop) must be carefully selected to not collide with other balls | goals can be used to realign the robot | . Template Maps . . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Skills&quot; | reverse %} {% for post in posts %} {{ post.title }} - {{ post.date | date_to_long_string }} | {% endfor %} .",
+    "content": "Programming Skills . I need to find the best programming skills routine. Considerations: . point turns are slow and prone to error | reducing the number of separate motions and optimizing for long, smooth motions is ideal | the locations where the robot can dispose blue balls (poop) must be carefully selected to not collide with other balls | goals can be used to realign the robot | . Template Maps . . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Skills&quot; | reverse %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/programming/skills",
     "relUrl": "/programming/skills"
   }
   ,"6": {
     "title": "V3 Skills",
-    "content": "New routine . Here are a few ways we can shave off time and make it possible to get the last 4 balls: . Robot V3 can intake the blue balls from the center tower rather than needing to poke them out. This can save us about 8 seconds. | Spending less time at each goal and perfecting the shoot/intake timing can save us about 5 seconds. | Adding a hood catapult to the robot can allow us to quickly score our preload, saving us about 3 seconds | Redesigning the entire autonomous to be more efficient, with the last 4 balls in mind, and reducing point turns, can save us about 10 seconds. | . For the last point, the more complex the motions are (driving while turning, complex arcs), the more optimal the routine can be. . One possible routine: . . Where B is the start, E is the end, red is translation, blue is front-facing direction, green is point turns, and light blue is potential “poop” locations. The star is a hood catapult. In this run, there are 11-12 point turns. .",
+    "content": "Previously, our routine was only designed to score a maximum of 122 points (out of 126), purposefully excluding 4 of the balls. It looked something like this: . We are only slightly under time, so in order to get the last 4 balls, something needs to be different. Simply modifying the current routine to grab the last 4 balls is not possible. . New routine . Here are a few ways we can shave off time and make it possible to get the last 4 balls: . Robot V3 can intake the blue balls from the center tower rather than needing to poke them out. This can save us about 8 seconds. | Spending less time at each goal and perfecting the shoot/intake timing can save us about 5 seconds. | Adding a hood catapult to the robot can allow us to quickly score our preload, saving us about 3 seconds | Redesigning the entire autonomous to be more efficient, with the last 4 balls in mind, and reducing point turns, can save us about 10 seconds. | . For the last point, the more complex the motions are (driving while turning, complex arcs), the more optimal the routine can be. . One possible routine: . . Where B is the start, E is the end, red is translation, blue is front-facing direction, green is point turns, and light blue is potential “poop” locations. The star is a hood catapult. In this run, there are 11-12 point turns. . Another: . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-04-03/v3-skills/",
     "relUrl": "/2021-04-03/v3-skills/"
   }
@@ -51,7 +51,7 @@
   }
   ,"8": {
     "title": "V2 Skills",
-    "content": "Previously, our routine was only designed to score a maximum of 122 points (out of 126), purposefully excluding 4 of the balls. It looked something like this: . . Where B is the start, E is the end, and green is point turns. In this run, there are 13 point turns. . . We are only slightly under time, so in order to get the last 4 balls, something needs to be different. Simply modifying the current routine to grab the last 4 balls is not possible. .",
+    "content": "For the competition of March 6, we plan to score all the goals. This would grant us a massive score thanks to completing all the combos. However, some improvements needed to be made from the last autonomous: . the starting orientation was not ideal to set up, and it often caused the robot to knock the nearby ball into the way | at this point, the motion algorithms now support strafing and arcing, making many more routes possible | vision sensor alignment has been implemented, and seems to be very effective at improving consistency | planning locations where the robot poops is very important to ensure the field is in a consistent state | improving the intake timing is key | . The new routine . Keeping all the above points in mind, here is the new routine: . . Where B is the start, E is the end, and green is point turns. In this run, there are 13 point turns. . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-03-01/v2-skills/",
     "relUrl": "/2021-03-01/v2-skills/"
   }
@@ -75,9 +75,9 @@
   }
   ,"12": {
     "title": "V1 Skills",
-    "content": "",
-    "url": "https://theol0403.github.io/7842B-Journal/2021-01-20/v1-skills/",
-    "relUrl": "/2021-01-20/v1-skills/"
+    "content": "We have about 2 days to write a programming skills run. We are starting from scratch, apart from a skeleton of a 3-ball routine. However, the algorithms have changed and distances will not be the same as before. . Currently, we can only move in straight lines. It is using the 2D motion profile codebase, but there is an issue with following a spline. Therefore, we will only feed it lines, effectively turning it into a 1D motion profile. . The current rough plan: . . Hopefully, we will be able to pull this off for the Feb 6 competition. . Update Feb 6 . The routine exeeded our expectations, by actually scoring decently well! We managed to program all the steps in our plan. It missed a few goals at the competition, but by shooting for a higher number of goals than before, we won the competition and beat a personal best! . Here is a successful practice run: .",
+    "url": "https://theol0403.github.io/7842B-Journal/2021-02-04/v1-skills/",
+    "relUrl": "/2021-02-04/v1-skills/"
   }
   ,"13": {
     "title": "Intake/Rollers Design",
