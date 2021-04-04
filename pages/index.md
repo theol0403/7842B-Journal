@@ -37,7 +37,7 @@ Parts of the code used for the robot is built on previous years work, so relevan
 	{% for post in site.posts %}
 	<li>
 		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date_to_long_string }}
+		- {{ post.date | date: "%B %u, %Y" }}
 	</li>
 	{% endfor %}
 </ul>

@@ -3,11 +3,7 @@ layout: default
 ---
 
 <h1>
-	<a href="{{ page.url | absolute_url }}">
-		{{ page.title }}
-	</a>
-	- {{ page.date | date: "%Y-%m-%d" }}
+  <a href="{{ page.url | absolute_url }}"> {{ page.title }} </a>
+  - {{ page.date | date: "%B %u, %Y" }}
 </h1>
-<article>
-	{{ content }}
-</article>
+<article>{{ content }}</article>
