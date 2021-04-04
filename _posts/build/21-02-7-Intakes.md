@@ -1,9 +1,6 @@
+---
 title: Intake/Rollers Design
 parent: Robot V1
----
-
-This a test of all markdown possibilities:
-
 ---
 
 # Intake/Rollers Design
