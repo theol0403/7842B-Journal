@@ -3,7 +3,7 @@ title: Intake/Rollers Design
 parent: Robot V1
 ---
 
-# Intake/Rollers Design
+
 
 ## Different Parts
 
@@ -24,3 +24,9 @@ You can see the 4 rollers in his image.
 ![](images/20210303_154912_HDR.jpg)
 
   However, since our robot gets rid of the wrong-colored balls out the back which means they need to be able to spin opposite directions – either spit out the ball or send it up to score with.  Therefore, the back rollers must be on different motors. So, each one of the back rollers are connected to one of the front rollers but the front and back need to go opposite directions to move the ball up. So, to run two rollers opposite directions with one motor we made a gearbox to reverse the rotation. The rollers that move the ball up or out the back run at 200 Rpm and the one that shoots them runs at 600 Rpm. 
+
+  Lower reversing gearbox.
+  ![](images/20210303_155011_HDR.jpg)
+
+  Upper reversing gearbox.
+  ![](images/20210303_154943_HDR.jpg)
