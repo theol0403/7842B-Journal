@@ -30,3 +30,7 @@ You can see the 4 rollers in his image.
 
   Upper reversing gearbox.
   ![](images/20210303_154943_HDR.jpg)
+
+For shooting we made a 600 rmp roller with a hood made out of lexan and strapping for compression.
+
+ ![](images/20210303_154845_HDR.jpg)
