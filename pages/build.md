@@ -22,7 +22,7 @@ My primary role on the team is to **design and build** the robot and am the **ma
 	{% for post in posts %}
 	<li>
 		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date_to_long_string }}
+		- {{ post.date | date: "%B %u, %Y" }}
 	</li>
 	{% endfor %}
 </ul>
