@@ -1,9 +1,8 @@
 ---
-layout: default
 title: Archive
+permalink: archive
 nav_order: 100
 has_children: true
-permalink: archive
 has_toc: false
 ---
 

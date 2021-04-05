@@ -15,15 +15,28 @@ search_tokenizer_separator: /[\s/]+/
 heading_anchors: true
 footer_content: "Copyright &copy; 2020-2021"
 
-aux_links:
-  "Build": "/build"
-  "Programming": "/programming"
-
 permalink: /:categories/:year-:month-:day/:title/
 
+aux_links:
+  "Build": "https://theol0403.github.io/7842B-Journal/build"
+  "Programming": "https://theol0403.github.io/7842B-Journal/programming"
+
 defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: "_posts/build"
+    values:
+      grand_parent: Build
+  - scope:
+      path: "_posts/programming"
+    values:
+      grand_parent: Programming

@@ -1,15 +1,16 @@
 ---
 layout: home
 title: Home
+permalink: /
 nav_order: 1
 has_children: true
-permalink: /
 has_toc: false
 ---
 
 # 7842B Digital Engineering Journal
 
-Welcome to the **Digital Engineering Journal** for VEX team **7842B** in the **Change Up** season.
+Welcome to the **Digital Engineering Journal** for VEX team **7842B** in the
+**Change Up** season.
 
 ![]({{site.url}}/assets/images/20210330_162158.jpg){:height="40%" width="40%"}
 
@@ -23,7 +24,8 @@ This is a joint digital journal, with sections for building and programming.
 [Build Journal]({{site.url}}/build){: .btn }
 [Programming Journal]({{site.url}}/programming){: .btn }
 
-Parts of the code used for the robot is built on previous years work, so relevant journal entries are kept in archive.
+Parts of the code used for the robot is built on previous years work, so
+relevant journal entries are kept in archive.
 
 [Tower Takeover Archive]({{site.url}}/archive){: .btn }
 
