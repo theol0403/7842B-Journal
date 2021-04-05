@@ -1549,13 +1549,11 @@ li.navigation-list-item a { color: #fff; }
 
 .highlight .p { color: #f8f8f8; }
 
-code { background-color: #1c1c1c; font-family: "Office Code Pro", Menlo, Consolas, Monospace; font-weight: 500; }
+code { background-color: #1c1c1c; }
 
 .highlight { line-height: 0.9 !important; }
 
 .navigation-list-item .navigation-list-child-list { display: inherit; }
-
-.navigation { scrollbar-width: none; }
 
 #title_name { white-space: pre; }
 
@@ -1566,5 +1564,15 @@ code { background-color: #1c1c1c; font-family: "Office Code Pro", Menlo, Consola
 .page-content ul > li::before { color: #94ddff; }
 
 #demoBorder { border: 1px solid #44434d; }
+
+/* Works on Firefox */
+* { scrollbar-width: thin; scrollbar-color: #616161 #27262b; }
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar { width: 6px; }
+
+*::-webkit-scrollbar-track { background: #27262b; }
+
+*::-webkit-scrollbar-thumb { background-color: #616161; border-radius: 20px; }
 
 /*# sourceMappingURL=just-the-docs.css.map */
