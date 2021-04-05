@@ -8,7 +8,7 @@ url: ""
 
 theme: just-the-docs
 
-# Just the docs
+ignore_theme_config: true
 color_scheme: "dark"
 search_enabled: true
 search_tokenizer_separator: /[\s/]+/
