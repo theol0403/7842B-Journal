@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/theol0403/just-the-docs.git
-  revision: b6442eba4d597f7b56b69fe5cbbef40372b69c18
+  revision: ccb12af6e46644e2ebbdac42643da7934d811ac2
   specs:
     just-the-docs (0.2.7)
       jekyll

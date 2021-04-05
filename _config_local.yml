@@ -23,7 +23,7 @@ aux_links:
 
 defaults:
   - scope:
-      path: ""
+      path: "pages"
       type: "pages"
     values:
       layout: "default"
