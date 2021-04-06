@@ -6,4 +6,7 @@ layout: default
   <a href="{{ page.url | absolute_url }}"> {{ page.title }} </a>
   - {{ page.date | date: "%B %u, %Y" }}
 </h1>
+
+{% if page.author %} <span class="author">{{ page.author}}</span> {% endif %}
+
 <article>{{ content }}</article>

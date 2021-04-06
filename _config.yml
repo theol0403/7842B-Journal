@@ -37,7 +37,9 @@ defaults:
       path: "_posts/build"
     values:
       grand_parent: Build
+      author: Saywer McClellan
   - scope:
       path: "_posts/programming"
     values:
       grand_parent: Programming
+      author: Theo Lemay
