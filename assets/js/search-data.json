@@ -9,7 +9,7 @@
   }
   ,"1": {
     "title": "Archive",
-    "content": ". . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Archive&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
+    "content": "Tower Takover Archive . This is an archive of old entries from last year. A lot of code and concepts is reused in the current year. . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Archive&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/archive",
     "relUrl": "/archive"
   }
