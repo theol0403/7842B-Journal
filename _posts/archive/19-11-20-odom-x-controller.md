@@ -3,13 +3,26 @@ title: Odom X Controller
 parent: Archive
 ---
 
-Having an X-Drive allows for much more complex algorithms. Not only can it move in all directions, but it can move independently of heading. This allows the robot to drive while turning, which is very useful for competition.
+<!-- prettier-ignore-start -->
+## Table of contents
+{: .no_toc .text-delta }
+1. TOC 
+{:toc}
 
-As of writing this, none of my autonomous programs use any turn commands, because all the required turning is handled while driving.
+<!-- prettier-ignore-end -->
+
+Having an X-Drive allows for much more complex algorithms. Not only can it move
+in all directions, but it can move independently of heading. This allows the
+robot to drive while turning, which is very useful for competition.
+
+As of writing this, none of my autonomous programs use any turn commands,
+because all the required turning is handled while driving.
 
 ### Directional Drive
 
-I have made a function that allows me to tell the robot to drive in a certain direction. Using this math I can tell the chassis to strafe at a certain direction and speed.
+I have made a function that allows me to tell the robot to drive in a certain
+direction. Using this math I can tell the chassis to strafe at a certain
+direction and speed.
 
 <img src="images/image-20191115150107968.png" width="70%" />
 
@@ -32,17 +45,28 @@ void strafeVector(const std::shared_ptr<XDriveModel>& model, double forward, dou
 
 ## PID Seeking
 
-Driving to a point with an X-Drive is much easier than with a skid-steer drive. This is because the direction of the robot does not depend on the heading of the robot, which eliminates oscillation and other issues.
+Driving to a point with an X-Drive is much easier than with a skid-steer drive.
+This is because the direction of the robot does not depend on the heading of the
+robot, which eliminates oscillation and other issues.
 
-Driving to a point is as simple as using odometry to calculate the angle and distance to the target point. I then apply PID to the distance error to determine the speed at which the robot should be moving.
+Driving to a point is as simple as using odometry to calculate the angle and
+distance to the target point. I then apply PID to the distance error to
+determine the speed at which the robot should be moving.
 
-I can then use the above function to apply the PID output to the desired direction. Doing this, the robot will always move towards the target point, and it even handles settling really well.
+I can then use the above function to apply the PID output to the desired
+direction. Doing this, the robot will always move towards the target point, and
+it even handles settling really well.
 
 ## Turning While Driving
 
-Using the above calculations, turning while driving is quite easy to implement. I simply use an `AngleCalculator` to calculate the desired turning amount. I apply PID to the output of the `AngleCalculator`, and then combine that with the output of the movement command.
+Using the above calculations, turning while driving is quite easy to implement.
+I simply use an `AngleCalculator` to calculate the desired turning amount. I
+apply PID to the output of the `AngleCalculator`, and then combine that with the
+output of the movement command.
 
-Using an `AngleCalculator` to calculate the desired angle is quite useful, as I can use it to tell the robot to face a point or angle while driving, as well as turn while driving.
+Using an `AngleCalculator` to calculate the desired angle is quite useful, as I
+can use it to tell the robot to face a point or angle while driving, as well as
+turn while driving.
 
 Here is the lib7842 implementation of X-Drive movement:
 
@@ -70,7 +94,7 @@ void OdomXController::strafeToPoint(const Vector& targetPoint,
 }
 ```
 
-## OdomXController Code:
+## OdomXController Code
 
 ```cpp
 /**
