@@ -1577,6 +1577,6 @@ code { background-color: #1c1c1c; }
 
 .author { display: block; margin-top: -1.2rem; margin-bottom: 1.2em; color: #fff; font-size: 17px; }
 
-img { box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.7); border-radius: 10px; }
+img { box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.7); border-radius: 10px; max-width: 80%; }
 
 /*# sourceMappingURL=just-the-docs.css.map */
