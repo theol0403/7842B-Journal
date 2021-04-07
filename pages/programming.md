@@ -42,17 +42,3 @@ This season, I have invested the majority of my time on three major tasks:
 - Design and implement **programming skills runs** that are consistent and fast.
 
 [Programming Skills]({{site.url}}/programming/skills){: .btn }
-
----
-
-<h2 class="text-delta">Table of contents</h2>
-
-<ul id="markdown-toc">
-	{% assign posts = site.posts | where: "parent", "Programming" %}
-	{% for post in posts %}
-	<li>
-		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date: "%B %u, %Y" }}
-	</li>
-	{% endfor %}
-</ul>

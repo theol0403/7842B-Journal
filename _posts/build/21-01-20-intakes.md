@@ -7,6 +7,7 @@ parent: Robot V1
 
 The robot was built so that the intakes could fold out to extend the reach of
 the robot into the goals. This was done by using nilocks and strand-offs.
+
 Elastics are used to pull the intakes to the front and into position. The
 intakes rotate in until they hit the stopper. The stopper is made to be easily
 changed for the right amount of compression on the ball. The intakes run at 200
@@ -53,3 +54,10 @@ For shooting we made a 600 rpm roller with a hood made out of lexan and
 strapping for compression:
 
 ![](images/20210303_154845_HDR.jpg)
+
+## Intake sensors
+
+We knew that we wanted the driver to be able to hold the "intake" button without
+being worried that the robot will expel balls. Therefore, we attached light
+sensors to the intake and hood which can detect the presence of a ball. This
+way, we can automatically turn off the rollers when they are holding a ball.

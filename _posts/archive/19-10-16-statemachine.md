@@ -3,9 +3,16 @@ title: State Machine
 parent: Archive
 ---
 
-A statemachine is an elegant way of programming a subsystem, and makes it easy to control both in driver control and autonomous. A statemachine is usually implemented using an enum containing a list of states, and then a switch statement in a separate thread that implements each state.
+A statemachine is an elegant way of programming a subsystem, and makes it easy
+to control both in driver control and autonomous. A statemachine is usually
+implemented using an enum containing a list of states, and then a switch
+statement in a separate thread that implements each state.
 
-However, implementing a statemachine requires a substantial amount of redundant code to set up the task with setter and getter functions. This is why I wrote an abstract `StateMachine` wrapper that reduces said boilerplate. `StateMachine` inherits task functionality from [Task Wrapper](Task Wrapper).
+However, implementing a statemachine requires a substantial amount of redundant
+code to set up the task with setter and getter functions. This is why I wrote an
+abstract `StateMachine` wrapper that reduces said boilerplate. `StateMachine`
+inherits task functionality from [Task
+Wrapper]({{ site.url}}{% link _posts/archive/19-10-18-task-wrapper.md %}).
 
 Here is the class, which accepts the enum type as a template parameter:
 
