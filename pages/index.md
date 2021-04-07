@@ -14,13 +14,13 @@ Welcome to the **Digital Engineering Journal** for VEX team **7842B** in the
 
 We are a two-person team, consisting of:
 
-- **Sawyer McClellan** - Builder
 - **Theo Lemay** - Programmer
+- **Sawyer McClellan** - Builder
 
 This is a joint digital journal, with sections for building and programming.
 
-[Build Journal]({{site.url}}/build){: .btn }
 [Programming Journal]({{site.url}}/programming){: .btn }
+[Build Journal]({{site.url}}/build){: .btn }
 
 ![]({{site.url}}/assets/images/20210330_162158.jpg){:height="40%" width="40%"}
 

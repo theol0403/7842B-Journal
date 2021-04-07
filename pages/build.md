@@ -9,10 +9,16 @@ has_toc: false
 # Build Journal
 
 I'm **Sawyer McClellan**, and this is my **digital build journal** for the
-2020/2021 **Change Up** season.
+2020/2021 **Change Up** season!
 
-My primary role on the team is to **design and build** the robot and am the
+My primary role on the team is to **design and build** the robot. I also am the
 **main driver**.
+
+This year, we have gone through **3** major iterations of the robot. The
+relevant features and improvements of each iteration is categorized below:
+
+[Robot V1]({{site.url}}/build/v1){: .btn } [Robot V2]({{site.url}}/build/v2){:
+.btn } [Robot V3]({{site.url}}/build/v3){: .btn }
 
 ---
 
