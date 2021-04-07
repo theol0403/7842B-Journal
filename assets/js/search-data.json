@@ -45,7 +45,7 @@
   }
   ,"7": {
     "title": "Hood Catapult",
-    "content": "We made a hood catapult so that at the beginning of the match when the robot deploys it automatically launches the ball into the goal which saves us time and makes it easier to get the next few balls. .",
+    "content": "We made a hood catapult so that at the beginning of the match when the robot deploys it automatically launches the ball into the goal which saves us time and makes it easier to get the next few balls. . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-04-02/hood-catapult/",
     "relUrl": "/2021-04-02/hood-catapult/"
   }
@@ -63,7 +63,7 @@
   }
   ,"10": {
     "title": "Robot V3",
-    "content": "",
+    "content": "We will be taking V3 to Worlds. We have a bit of time for some larger-scale rebuilding, and then spend time perfecting our autonomous and driving. .",
     "url": "https://theol0403.github.io/7842B-Journal/build/v3/",
     "relUrl": "/build/v3/"
   }
@@ -81,13 +81,13 @@
   }
   ,"13": {
     "title": "Deflector",
-    "content": "For the new robot we decided to add a deflector that directs the ball into the goal. This majorly helps doing double shots and accuracy of the robot. .",
+    "content": "For the new robot we decided to add a deflector that directs the ball into the goal. This majorly helps doing double shots and accuracy of the robot. . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-02-23/deflector/",
     "relUrl": "/2021-02-23/deflector/"
   }
   ,"14": {
     "title": "Robot V2",
-    "content": "",
+    "content": "After attending two competitions with V1, we decided to make some major changes to improve the robot. . We will take V2 to the next two competitions, which will be the last two until Worlds. .",
     "url": "https://theol0403.github.io/7842B-Journal/build/v2/",
     "relUrl": "/build/v2/"
   }
@@ -99,19 +99,19 @@
   }
   ,"16": {
     "title": "Intake Design",
-    "content": "Front Intakes . The robot was built so that the intakes could fold out to extend the reach of the robot into the goals. This was done by using nilocks and strand-offs. Elastics are used to pull the intakes to the front and into position. The intakes rotate in until they hit the stopper. The stopper is made to be easily changed for the right amount of compression on the ball. The intakes run at 200 rpm. . . Back Rollers . The robot has rollers at the back that are spaced apart so that we can get rid of the balls out the back. . . The robot uses 2 motors for the rollers that move up and shoot the balls. Since there are 4 rollers each motor controls 2 rollers. . You can see the 4 rollers in his image. . However, since our robot gets rid of the wrong-colored balls out the back which means they need to be able to spin opposite directions – either spit out the ball or send it up to score with. Therefore, the back rollers must be on different motors. So, each one of the back rollers are connected to one of the front rollers but the front and back need to go opposite directions to move the ball up. So, to run two rollers opposite directions with one motor we made a gearbox to reverse the rotation. The rollers that move the ball up or out the back run at 200 rpm and the one that shoots them runs at 600 rpm. . Lower reversing gearbox. . Upper reversing gearbox. . For shooting we made a 600 rpm roller with a hood made out of lexan and strapping for compression. . .",
+    "content": "Front Intakes . The robot was built so that the intakes could fold out to extend the reach of the robot into the goals. This was done by using nilocks and strand-offs. Elastics are used to pull the intakes to the front and into position. The intakes rotate in until they hit the stopper. The stopper is made to be easily changed for the right amount of compression on the ball. The intakes run at 200 rpm. . . Back Rollers . The robot has rollers at the back that are spaced apart so that we can get rid of the balls out the back: . . The robot uses 2 motors for the rollers that move up and shoot the balls. Since there are 4 rollers each motor controls 2 rollers. . You can see the 4 rollers in his image: . . However, since our robot gets rid of the wrong-colored balls out the back which means they need to be able to spin opposite directions – either spit out the ball or send it up to score with. Therefore, the back rollers must be on different motors. . So, each one of the back rollers are connected to one of the front rollers but the front and back need to go opposite directions to move the ball up. To run two rollers opposite directions with one motor we made a gearbox to reverse the rotation. . The rollers that move the ball up or out the back run at 200 rpm and the one that shoots them runs at 600 rpm. . Lower reversing gearbox: . . Upper reversing gearbox: . . For shooting we made a 600 rpm roller with a hood made out of lexan and strapping for compression: . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-01-20/intakes/",
     "relUrl": "/2021-01-20/intakes/"
   }
   ,"17": {
     "title": "Robot Chassis",
-    "content": "X-Drive . We decided to make an X-drive chassis with 2.75” wheels and direct-drive 200 rpm motors. . We chose an X-drive because of its good manoeuvrability and consistency. Because the drive is holonomic, it can drive and strafe in all directions. The low speed and high torque makes it very controllable during autonomous. . .",
+    "content": "X-Drive . We decided to make an X-drive chassis with 2.75” wheels and direct-drive 200 rpm motors. We chose an X-drive because of its good manoeuvrability and consistency. . Because the drive is holonomic, it can drive and strafe in all directions. The low speed and high torque makes it very controllable during autonomous. . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-01-15/chassis/",
     "relUrl": "/2021-01-15/chassis/"
   }
   ,"18": {
     "title": "Robot V1",
-    "content": "",
+    "content": "This is our first robot. We built it in preparation for our first competition, and the plan was to get a feel for the game and virtual competition. . It ended up performing quite well and winning us the competition! .",
     "url": "https://theol0403.github.io/7842B-Journal/build/v1/",
     "relUrl": "/build/v1/"
   }
