@@ -147,6 +147,7 @@ if (partner(R2) && partner(R1)) {
   state |= rollerStates::poop;
 }
 
+// partner can force poop
 if (partner(B)) { state |= rollerStates::poop; }
 
 // if R1, add shoot
