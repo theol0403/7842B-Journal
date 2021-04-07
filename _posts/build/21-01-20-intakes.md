@@ -12,21 +12,21 @@ intakes rotate in until they hit the stopper. The stopper is made to be easily
 changed for the right amount of compression on the ball. The intakes run at 200
 rpm.
 
-![](images/20210303_154849.jpg){:height="80%" width="80%"}
+![](images/20210303_154849.jpg)
 
 ## Back Rollers
 
 The robot has rollers at the back that are spaced apart so that we can get rid
 of the balls out the back:
 
-![](images/20210303_164853.jpg){:height="80%" width="80%"}
+![](images/20210303_164853.jpg)
 
 The robot uses 2 motors for the rollers that move up and shoot the balls. Since
 there are 4 rollers each motor controls 2 rollers.
 
 You can see the 4 rollers in his image:
 
-![](images/20210303_154912_HDR.jpg){:height="80%" width="80%"}
+![](images/20210303_154912_HDR.jpg)
 
 However, since our robot gets rid of the wrong-colored balls out the back which
 means they need to be able to spin opposite directions – either spit out the
@@ -43,13 +43,13 @@ that shoots them runs at 600 rpm.
 
 Lower reversing gearbox:
 
-![](images/20210303_155011_HDR.jpg){:height="80%" width="80%"}
+![](images/20210303_155011_HDR.jpg)
 
 Upper reversing gearbox:
 
-![](images/20210303_154943_HDR.jpg){:height="80%" width="80%"}
+![](images/20210303_154943_HDR.jpg)
 
 For shooting we made a 600 rpm roller with a hood made out of lexan and
 strapping for compression:
 
-![](images/20210303_154845_HDR.jpg){:height="80%" width="80%"}
+![](images/20210303_154845_HDR.jpg)

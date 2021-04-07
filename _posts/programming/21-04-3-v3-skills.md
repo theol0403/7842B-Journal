@@ -39,8 +39,32 @@ direction, <span style="color: #26d761; font-weight: bold">green</span> is point
 turns, and <span style="color: #64e6e7; font-weight: bold">light blue</span> is
 potential "poop" locations. The
 <span style="color: #ffda3a; font-weight: bold">star</span> is a hood catapult.
+
 In this run, there are 11-12 point turns.
 
-Another:
+## Ambitious Plan
+
+Here is a new ambitious plan which only has **4** point turns!
 
 ![](images/skills-sensors.png)
+
+Where <span style="color: #e11720; font-weight: bold">red</span> is forward,
+<span style="color: #135bb5; font-weight: bold">blue</span> is backward,
+<span style="color: #34d07a; font-weight: bold">green</span> is strafing,
+<span style="color: #9141ac; font-weight: bold">purple</span> is heading,
+<span style="color: #ea9e50; font-weight: bold">orange</span> is poop locations,
+and <span style="color: #cdab8f; font-weight: bold">beige</span> is locations
+for line-sensor alignment.
+
+It requires:
+
+- holonomic motion profiling (turning while driving)
+- consistent velocity following
+- line sensor adjustment
+
+As long as I achieve these things in code the routine should be doable.
+
+### Update Apr 2
+
+I drove the autonomous routine and verified that it is in fact possible to
+execute. Onwards with the plan!

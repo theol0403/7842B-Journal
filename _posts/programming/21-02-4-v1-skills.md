@@ -16,6 +16,11 @@ The current rough plan:
 
 ![](images/skills-v1.png)
 
+Where <span style="color: #e11720; font-weight: bold">red</span> is forward,
+<span style="color: #135bb5; font-weight: bold">blue</span> is backward,
+<span style="color: #34d07a; font-weight: bold">green</span> is turning, and
+<span style="color: #ea9e50; font-weight: bold">orange</span> is direction.
+
 Hopefully, we will be able to pull this off for the Feb 6 competition.
 
 ## Update Feb 6
