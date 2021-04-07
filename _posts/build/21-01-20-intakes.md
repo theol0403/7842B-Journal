@@ -12,34 +12,44 @@ intakes rotate in until they hit the stopper. The stopper is made to be easily
 changed for the right amount of compression on the ball. The intakes run at 200
 rpm.
 
-![](images/20210303_154849.jpg)
+![](images/20210303_154849.jpg){:height="80%" width="80%"}
 
 ## Back Rollers
 
 The robot has rollers at the back that are spaced apart so that we can get rid
-of the balls out the back.
+of the balls out the back:
 
-![](images/20210303_164853.jpg)
+![](images/20210303_164853.jpg){:height="80%" width="80%"}
 
 The robot uses 2 motors for the rollers that move up and shoot the balls. Since
 there are 4 rollers each motor controls 2 rollers.
 
-You can see the 4 rollers in his image. ![](images/20210303_154912_HDR.jpg)
+You can see the 4 rollers in his image:
+
+![](images/20210303_154912_HDR.jpg){:height="80%" width="80%"}
 
 However, since our robot gets rid of the wrong-colored balls out the back which
 means they need to be able to spin opposite directions – either spit out the
 ball or send it up to score with. Therefore, the back rollers must be on
-different motors. So, each one of the back rollers are connected to one of the
-front rollers but the front and back need to go opposite directions to move the
-ball up. So, to run two rollers opposite directions with one motor we made a
-gearbox to reverse the rotation. The rollers that move the ball up or out the
-back run at 200 rpm and the one that shoots them runs at 600 rpm.
+different motors.
 
-Lower reversing gearbox. ![](images/20210303_155011_HDR.jpg)
+So, each one of the back rollers are connected to one of the front rollers but
+the front and back need to go opposite directions to move the ball up. To run
+two rollers opposite directions with one motor we made a gearbox to reverse the
+rotation.
 
-Upper reversing gearbox. ![](images/20210303_154943_HDR.jpg)
+The rollers that move the ball up or out the back run at 200 rpm and the one
+that shoots them runs at 600 rpm.
+
+Lower reversing gearbox:
+
+![](images/20210303_155011_HDR.jpg){:height="80%" width="80%"}
+
+Upper reversing gearbox:
+
+![](images/20210303_154943_HDR.jpg){:height="80%" width="80%"}
 
 For shooting we made a 600 rpm roller with a hood made out of lexan and
-strapping for compression.
+strapping for compression:
 
-![](images/20210303_154845_HDR.jpg)
+![](images/20210303_154845_HDR.jpg){:height="80%" width="80%"}
