@@ -43,3 +43,44 @@ enum class rollerStates {
   topPoop, // bring down then poop
 };
 ```
+
+I can then plug in that state into my handy [state machine
+helper]({{ site.baseurl }}{% link _posts/archive/19-10-16-statemachine.md %}):
+
+```cpp
+class Roller : public StateMachine<rollerStates, rollerStates::off> {
+public:
+  Roller(const std::shared_ptr<AbstractMotor>& iintakes,
+         const std::shared_ptr<AbstractMotor>& ibottomRoller,
+         const std::shared_ptr<AbstractMotor>& itopRoller,
+         const std::shared_ptr<OpticalSensor>& itoplight,
+         const std::shared_ptr<OpticalSensor>& ibottomLight,
+         const std::shared_ptr<GUI::Graph>& igraph);
+
+public:
+  enum class colors { none = 0, red, blue };
+
+  colors getTopLight() const;
+  colors getBottomLight() const;
+
+  bool shouldPoop();
+  bool shouldShootPoop();
+  bool shouldSpacedShoot();
+
+  int getIntake();
+
+  void initialize() override;
+  void loop() override;
+
+  std::shared_ptr<AbstractMotor> intakes {nullptr};
+  std::shared_ptr<AbstractMotor> bottomRoller {nullptr};
+  std::shared_ptr<AbstractMotor> topRoller {nullptr};
+  std::shared_ptr<OpticalSensor> topLight {nullptr};
+  std::shared_ptr<OpticalSensor> bottomLight {nullptr};
+  std::shared_ptr<GUI::Graph> graph {nullptr};
+
+  Timer macroTime;
+  rollerStates macroReturnState = rollerStates::off;
+  int macroIntakeVel = 12000;
+};
+```
