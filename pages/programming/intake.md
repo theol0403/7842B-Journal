@@ -13,7 +13,7 @@ One of my main roles as programmer is to design and implement robot automation
 and interaction with driver controls.
 
 My go-to solution for subsystem control is to create a [statemachine
-controller]({{ site.baseurl }}{% link _posts/archive/19-10-16-statemachine.md %}).
+controller]({{ site.url }}{% link _posts/archive/19-10-16-statemachine.md %}).
 
 ---
 

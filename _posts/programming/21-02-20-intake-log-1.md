@@ -45,7 +45,7 @@ enum class rollerStates {
 ```
 
 I can then plug in that state into my handy [state machine
-helper]({{ site.baseurl }}{% link _posts/archive/19-10-16-statemachine.md %}):
+helper]({{ site.url }}{% link _posts/archive/19-10-16-statemachine.md %}):
 
 ```cpp
 class Roller : public StateMachine<rollerStates, rollerStates::off> {
