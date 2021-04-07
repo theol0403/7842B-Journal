@@ -4,6 +4,14 @@ parent: Skills
 nav_order: 3
 ---
 
+<!-- prettier-ignore-start -->
+## Table of contents
+{: .no_toc .text-delta }
+1. TOC 
+{:toc}
+
+<!-- prettier-ignore-end -->
+
 Previously, our routine was only designed to score a maximum of 122 points (out
 of 126), purposefully excluding 4 of the balls. It looked something like this:
 
@@ -64,7 +72,7 @@ It requires:
 
 As long as I achieve these things in code the routine should be doable.
 
-### Update Apr 2
+## Update Apr 2
 
 I drove the autonomous routine and verified that it is in fact possible to
 execute. Onwards with the plan!

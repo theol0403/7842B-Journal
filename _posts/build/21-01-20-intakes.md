@@ -3,6 +3,14 @@ title: Intake Design
 parent: Robot V1
 ---
 
+<!-- prettier-ignore-start -->
+## Table of contents
+{: .no_toc .text-delta }
+1. TOC 
+{:toc}
+
+<!-- prettier-ignore-end -->
+
 ## Front Intakes
 
 The robot was built so that the intakes could fold out to extend the reach of

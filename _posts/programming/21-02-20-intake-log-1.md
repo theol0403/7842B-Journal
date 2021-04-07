@@ -88,27 +88,27 @@ public:
 Then, it is easy for me to design a driver control program:
 
 ```cpp
-  if ((mDigital(L1) || mDigital(R2)) && mDigital(R1)) {
-    system(roller, on);
-  } else if (mDigital(R1) && mDigital(A)) {
-    system(roller, on);
-  } else if (mDigital(A)) {
-    system(roller, poopIn);
-  } else if (mDigital(R1)) {
-    system(roller, shoot);
-  } else if (mDigital(L2)) {
-    system(roller, out);
-  } else if (mDigital(B)) {
-    system(roller, deploy);
-  } else if (mDigital(LEFT)) {
-    system(roller, poopOut);
-  } else if (mDigital(DOWN)) {
-    system(roller, topOut);
-  } else if (mDigital(L1) || mDigital(R2)) {
-    system(roller, intake);
-  } else {
-    system(roller, off);
-  }
+if ((mDigital(L1) || mDigital(R2)) && mDigital(R1)) {
+  system(roller, on);
+} else if (mDigital(R1) && mDigital(A)) {
+  system(roller, on);
+} else if (mDigital(A)) {
+  system(roller, poopIn);
+} else if (mDigital(R1)) {
+  system(roller, shoot);
+} else if (mDigital(L2)) {
+  system(roller, out);
+} else if (mDigital(B)) {
+  system(roller, deploy);
+} else if (mDigital(LEFT)) {
+  system(roller, poopOut);
+} else if (mDigital(DOWN)) {
+  system(roller, topOut);
+} else if (mDigital(L1) || mDigital(R2)) {
+  system(roller, intake);
+} else {
+  system(roller, off);
+}
 ```
 
 Finally, I can implement the statemachine states.
