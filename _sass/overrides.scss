@@ -151,15 +151,18 @@ img {
 .highlighter-rouge {
   box-shadow: 2px 2px 20px 0px rgba(28, 28, 29, 0.7);
   margin-bottom: 2rem;
+  border-radius: 10px;
 }
 
+pre.highlight,
+figure.highlight {
+  padding: 0.9rem;
+  background-color: #2d2a2e;
+}
+
+.highlight pre,
 code {
   background-color: #2d2a2e;
-}
-
-.highlight pre {
-  background-color: #2d2a2e;
-  color: #f8f8f8;
 }
 
 .highlight .hll {

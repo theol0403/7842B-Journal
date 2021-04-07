@@ -15,3 +15,5 @@ gem 'jekyll-postfiles', group: [:jekyll_plugins]
 
 gem "webrick"
 gem "bigdecimal"
+
+gem "rouge", "~> 3.26"

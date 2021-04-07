@@ -84,6 +84,7 @@ DEPENDENCIES
   jekyll-compose
   jekyll-postfiles
   just-the-docs!
+  rouge (~> 3.26)
   webrick
 
 BUNDLED WITH
