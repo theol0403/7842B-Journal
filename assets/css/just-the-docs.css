@@ -1479,7 +1479,7 @@ li.navigation-list-item a { color: #fff; }
 
 *::-webkit-scrollbar-thumb { background-color: #616161; border-radius: 20px; }
 
-.author { display: block; margin-top: -1.2rem; margin-bottom: 1.2em; color: #fff; font-size: 17px; }
+.author { display: block; margin-top: -1.2rem; margin-bottom: 1.2em; color: #e6e1e8; font-size: 14px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; }
 
 img { box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.7); border-radius: 10px; max-width: 80%; }
 
