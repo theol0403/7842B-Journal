@@ -118,6 +118,7 @@ li.navigation-list-item a {
 * {
   scrollbar-width: thin;
   scrollbar-color: #616161 #27262b;
+  scroll-behavior: smooth;
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -134,10 +135,6 @@ li.navigation-list-item a {
   border-radius: 20px;
 }
 
-* {
-  scroll-behavior: smooth;
-}
-
 .author {
   display: block;
   margin-top: -1.2rem;
@@ -150,15 +147,25 @@ li.navigation-list-item a {
 }
 
 img {
-  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
   max-width: 80%;
+  transition: box-shadow 0.5s;
+}
+
+img:hover {
+  box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.7);
 }
 
 .highlighter-rouge {
-  box-shadow: 2px 2px 20px 0px rgba(28, 28, 29, 0.7);
+  box-shadow: 0px 0px 20px 0px rgba(28, 28, 29, 0.7);
   margin-bottom: 2rem;
   border-radius: 8px;
+  transition: box-shadow 0.5s;
+}
+
+.highlighter-rouge:hover {
+  box-shadow: 0px 0px 20px 10px rgba(28, 28, 29, 0.7);
 }
 
 pre.highlight,
