@@ -33,8 +33,6 @@ relevant journal entries are kept in archive.
 
 ---
 
-## Post Index
-
 <h2 class="text-delta">Table of contents</h2>
 
 <ul id="markdown-toc">
