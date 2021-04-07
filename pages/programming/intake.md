@@ -24,7 +24,7 @@ controller]({{ site.url }}{% link _posts/archive/19-10-16-statemachine.md %}).
 	{% for post in posts %}
 	<li>
 		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date: "%B %u, %Y" }}
+		- {{ post.date | date: "%B %d, %Y" }}
 	</li>
 	{% endfor %}
 </ul>

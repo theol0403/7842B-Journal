@@ -31,7 +31,7 @@ I need to find the best programming skills routine. Considerations:
 	{% for post in posts %}
 	<li>
 		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date: "%B %u, %Y" }}
+		- {{ post.date | date: "%B %d, %Y" }}
 	</li>
 	{% endfor %}
 </ul>

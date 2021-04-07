@@ -39,7 +39,7 @@ relevant journal entries are kept in archive.
 	{% for post in site.posts %}
 	<li>
 		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date: "%B %u, %Y" }}
+		- {{ post.date | date: "%B %d, %Y" }}
 	</li>
 	{% endfor %}
 </ul>

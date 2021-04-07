@@ -72,7 +72,7 @@ It requires:
 
 As long as I achieve these things in code the routine should be doable.
 
-## Update Apr 2
+## Update Apr 5
 
 I drove the autonomous routine and verified that it is in fact possible to
 execute. Onwards with the plan!

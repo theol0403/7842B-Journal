@@ -413,7 +413,7 @@ bitwise representation of the state.
 But the internal statemachine interprets the state as distinct states and
 switches between the possibilities, allowing for more complex logic.
 
-## Update March 6
+## Update March 28
 
 I finished tuning up the code and tested it on the robot for the first time. It
 worked perfectly first try! I'm looking forward to driver practice with the new
