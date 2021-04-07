@@ -15,13 +15,13 @@
   }
   ,"2": {
     "title": "Build",
-    "content": "Build Journal . I’m Sawyer McClellan, and this is my digital build journal for the 2020/2021 Change Up season. . My primary role on the team is to design and build the robot and am the main driver. . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Build&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
+    "content": "Build Journal . I’m Sawyer McClellan, and this is my digital build journal for the 2020/2021 Change Up season! . My primary role on the team is to design and build the robot. I also am the main driver. . This year, we have gone through 3 major iterations of the robot. The relevant features and improvements of each iteration is categorized below: . Robot V1 Robot V2 Robot V3 . . . {% assign posts = site.posts | where: &quot;parent&quot;, &quot;Build&quot; %} {% for post in posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/build",
     "relUrl": "/build"
   }
   ,"3": {
     "title": "Home",
-    "content": "7842B Digital Engineering Journal . Welcome to the Digital Engineering Journal for VEX team 7842B in the Change Up season! . We are a two-person team, consisting of: . Sawyer McClellan - Builder | Theo Lemay - Programmer | . This is a joint digital journal, with sections for building and programming. . Build Journal Programming Journal . . Archive . Parts of the code used for the robot is built on previous years work, so relevant journal entries are kept in archive. . Tower Takeover Archive . . Post Index . . {% for post in site.posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
+    "content": "7842B Digital Engineering Journal . Welcome to the Digital Engineering Journal for VEX team 7842B in the Change Up season! . We are a two-person team, consisting of: . Theo Lemay - Programmer | Sawyer McClellan - Builder | . This is a joint digital journal, with sections for building and programming. . Programming Journal Build Journal . . Archive . Parts of the code used for the robot is built on previous years work, so relevant journal entries are kept in archive. . Tower Takeover Archive . . Post Index . . {% for post in site.posts %} {{ post.title }} - {{ post.date | date: &quot;%B %u, %Y&quot; }} | {% endfor %} .",
     "url": "https://theol0403.github.io/7842B-Journal/",
     "relUrl": "/"
   }
@@ -64,8 +64,8 @@
   ,"10": {
     "title": "Robot V3",
     "content": "",
-    "url": "https://theol0403.github.io/7842B-Journal/2021-03-23/robot-v3/",
-    "relUrl": "/2021-03-23/robot-v3/"
+    "url": "https://theol0403.github.io/7842B-Journal/build/v3",
+    "relUrl": "/build/v3"
   }
   ,"11": {
     "title": "V2 Skills",
@@ -88,8 +88,8 @@
   ,"14": {
     "title": "Robot V2",
     "content": "",
-    "url": "https://theol0403.github.io/7842B-Journal/2021-02-20/robot-v2/",
-    "relUrl": "/2021-02-20/robot-v2/"
+    "url": "https://theol0403.github.io/7842B-Journal/build/v2",
+    "relUrl": "/build/v2"
   }
   ,"15": {
     "title": "V1 Skills",
@@ -112,8 +112,8 @@
   ,"18": {
     "title": "Robot V1",
     "content": "",
-    "url": "https://theol0403.github.io/7842B-Journal/2021-01-11/robot-v1/",
-    "relUrl": "/2021-01-11/robot-v1/"
+    "url": "https://theol0403.github.io/7842B-Journal/build/v1",
+    "relUrl": "/build/v1"
   }
   ,"19": {
     "title": "lib7842",
