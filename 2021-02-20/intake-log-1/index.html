@@ -59,4 +59,176 @@
   <span class="n">rollerStates</span> <span class="n">macroReturnState</span> <span class="o">=</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">off</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">macroIntakeVel</span> <span class="o">=</span> <span class="mi">12000</span><span class="p">;</span>
 <span class="p">};</span>
-</code></pre></div></div> </article> <hr> <footer role="contentinfo"> <p class="text-small text-grey-dk-000 mb-0">Copyright &copy; 2020-2021</p> </footer> </div> </div> </div> </div> </body> </html>
+</code></pre></div></div> <p>Then, it is easy for me to design a driver control program:</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="p">((</span><span class="n">mDigital</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span> <span class="o">||</span> <span class="n">mDigital</span><span class="p">(</span><span class="n">R2</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="n">mDigital</span><span class="p">(</span><span class="n">R1</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">on</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">R1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">mDigital</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">on</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">poopIn</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">R1</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">shoot</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">L2</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">out</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">B</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">deploy</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">LEFT</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">poopOut</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">DOWN</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">topOut</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">mDigital</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span> <span class="o">||</span> <span class="n">mDigital</span><span class="p">(</span><span class="n">R2</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">intake</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">system</span><span class="p">(</span><span class="n">roller</span><span class="p">,</span> <span class="n">off</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div></div> <p>Finally, I can implement the statemachine states.</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">Roller</span><span class="o">::</span><span class="n">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Rate</span> <span class="n">rate</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">off</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">shouldPoop</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">offWithoutPoop</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">out</span><span class="p">:</span>
+        <span class="c1">// if (shouldPoop(-12000)) continue;</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">on</span><span class="p">:</span>
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">shoot</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">shouldPoop</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">shouldShootPoop</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="p">[[</span><span class="n">fallthrough</span><span class="p">]];</span>
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">onWithoutPoop</span><span class="p">:</span>
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">shootWithoutPoop</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">shouldSpacedShoot</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">getBottomLight</span><span class="p">()</span> <span class="o">==</span> <span class="n">colors</span><span class="o">::</span><span class="n">blue</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">getTopLight</span><span class="p">()</span> <span class="o">!=</span> <span class="n">colors</span><span class="o">::</span><span class="n">red</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="n">getIntake</span><span class="p">());</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">intake</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">shouldPoop</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="p">[[</span><span class="n">fallthrough</span><span class="p">]];</span>
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">intakeWithoutPoop</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">getTopLight</span><span class="p">()</span> <span class="o">!=</span> <span class="n">colors</span><span class="o">::</span><span class="n">none</span> <span class="o">&amp;&amp;</span> <span class="n">getBottomLight</span><span class="p">()</span> <span class="o">!=</span> <span class="n">colors</span><span class="o">::</span><span class="n">none</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">getBottomLight</span><span class="p">()</span> <span class="o">==</span> <span class="n">colors</span><span class="o">::</span><span class="n">blue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+          <span class="p">}</span>
+          <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">getTopLight</span><span class="p">()</span> <span class="o">!=</span> <span class="n">colors</span><span class="o">::</span><span class="n">none</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// balance between raising ball to prevent rubbing and bringing ball too high</span>
+          <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">1800</span><span class="p">);</span>
+          <span class="c1">// slow down</span>
+          <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+          <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">// balance between bringing ball too fast and accidentally pooping</span>
+          <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">getBottomLight</span><span class="p">()</span> <span class="o">==</span> <span class="n">colors</span><span class="o">::</span><span class="n">blue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+          <span class="p">}</span>
+          <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">poopIn</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">poopOut</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">purge</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">topOut</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">deploy</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">800</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">timedPoop</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="n">macroIntakeVel</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">macroTime</span><span class="p">.</span><span class="n">getDtFromMark</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="n">_ms</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">macroTime</span><span class="p">.</span><span class="n">clearMark</span><span class="p">();</span>
+          <span class="n">state</span> <span class="o">=</span> <span class="n">macroReturnState</span><span class="p">;</span>
+          <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">timedShootPoop</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="n">macroIntakeVel</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">macroTime</span><span class="p">.</span><span class="n">getDtFromMark</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">400</span><span class="n">_ms</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">macroTime</span><span class="p">.</span><span class="n">placeMark</span><span class="p">();</span>
+          <span class="n">state</span> <span class="o">=</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">timedPoop</span><span class="p">;</span>
+          <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">spacedShoot</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="n">macroIntakeVel</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">macroTime</span><span class="p">.</span><span class="n">getDtFromMark</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="n">_ms</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">macroTime</span><span class="p">.</span><span class="n">clearMark</span><span class="p">();</span>
+          <span class="n">state</span> <span class="o">=</span> <span class="n">macroReturnState</span><span class="p">;</span>
+          <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">topPoop</span><span class="p">:</span>
+        <span class="n">topRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">bottomRoller</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="o">-</span><span class="mi">12000</span><span class="p">);</span>
+        <span class="n">intakes</span><span class="o">-&gt;</span><span class="n">moveVoltage</span><span class="p">(</span><span class="n">macroIntakeVel</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">macroTime</span><span class="p">.</span><span class="n">getDtFromMark</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">150</span><span class="n">_ms</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">macroTime</span><span class="p">.</span><span class="n">placeMark</span><span class="p">();</span>
+          <span class="n">state</span> <span class="o">=</span> <span class="n">rollerStates</span><span class="o">::</span><span class="n">timedPoop</span><span class="p">;</span>
+          <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">rate</span><span class="p">.</span><span class="n">delayUntil</span><span class="p">(</span><span class="mi">5</span><span class="n">_ms</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>This code is versatile because it is</p> <ul> <li>asynchronous</li> <li>responsive</li> <li>stateful (and the state can be easily retrieved and changed)</li> <li>common between driving and autonomous</li> </ul> <p>It can:</p> <ul> <li>intake and hold balls</li> <li>shoot balls with spacing</li> <li>automatically engage poop states which auto return to the original state</li> <li>execute all the other actions needed</li> </ul> <p>However, this code is slightly messy and inflexible, but I have an idea to improve it in the next build log.</p> </article> <hr> <footer role="contentinfo"> <p class="text-small text-grey-dk-000 mb-0">Copyright &copy; 2020-2021</p> </footer> </div> </div> </div> </div> </body> </html>

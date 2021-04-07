@@ -1483,11 +1483,11 @@ li.navigation-list-item a { color: #fff; }
 
 img { box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.7); border-radius: 10px; max-width: 80%; }
 
-.highlighter-rouge { box-shadow: 2px 2px 20px 0px rgba(28, 28, 29, 0.7); margin-bottom: 2rem; }
+.highlighter-rouge { box-shadow: 2px 2px 20px 0px rgba(28, 28, 29, 0.7); margin-bottom: 2rem; border-radius: 10px; }
 
-code { background-color: #2d2a2e; }
+pre.highlight, figure.highlight { padding: 0.9rem; background-color: #2d2a2e; }
 
-.highlight pre { background-color: #2d2a2e; color: #f8f8f8; }
+.highlight pre, code { background-color: #2d2a2e; }
 
 .highlight .hll { background-color: #49483e; }
 
