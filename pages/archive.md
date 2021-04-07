@@ -6,6 +6,11 @@ has_children: true
 has_toc: false
 ---
 
+# Tower Takover Archive
+
+This is an archive of old entries from last year. A lot of code and concepts is
+reused in the current year.
+
 ---
 
 <h2 class="text-delta">Table of contents</h2>
