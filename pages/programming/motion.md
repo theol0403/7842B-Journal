@@ -58,7 +58,8 @@ to correct for disturbances and errors, consider some realities:
 - using vex sensors for localization is not accurate, fast, or smooth
 
 Instead, what ends up happening is that **odom introduces noise and variance**
-into the controller.
+into the controller, in a vicious cycle of tracking error -> correction -> more
+error -> **unpredictable error**.
 
 Is the definition of smooth, consistent control "do the exact same thing every
 time", or "aggressively minimize error until the sensors say you are at your
