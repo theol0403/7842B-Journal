@@ -71,11 +71,10 @@ Is the definition of smooth, consistent control "do the exact same thing every
 time", or "aggressively minimize error until the sensors say you are at your
 destination"? I believe it is the former.
 
-Is there a way to achieve the benefits of odometry (more complex and versatile
-algorithms) without being overreliant on sensors? This is my objective for the
-season.
-
 ## Requirements
+
+Is there a way to achieve the benefits of odometry (more complex and versatile
+algorithms) without being overreliant on sensors?
 
 I need to develop a motion algorithm that matches the following criteria:
 
@@ -93,3 +92,41 @@ Specifically, we want the robot to follow a **parametric spline**. A parametric
 spline is a function that gives $$(x, y)$$ as a function of $$t$$.
 
 ![](images/spline.png){: .noshadow}
+
+We need to design an algorithm that takes a **spline** as an input and outputs
+**motor voltages** for each side of the robot.
+
+## Solutions
+
+### Pure Pursuit
+
+One option is [Pure
+Pursuit]({{ site.url }}{% link _posts/archive/19-11-25-pure-pursuit.md %}), an
+algorithm that uses odometry to project a point along a spline spline for it to
+"seek".
+
+However, since pure pursuit is a closed-loop controller that takes the robot's
+current state, measured by sensors (position, speed), and calculates how the
+robot should move, it falls into the problems with closed-loop control mentioned
+above - namely this it is unstable, unpredictable, inconsistent, and not smooth.
+
+![](images/pure.png)
+
+## Open Loop Control
+
+What if we made an algorithm that generates wheel velocities for the robot to
+follow exactly:
+
+- An open loop controller plans how it will move ahead of time.
+- The motion is guaranteed to be smooth, consistent, optimal, and therefore
+  repeatable
+- Any tracking error will often be repeatable
+
+However, this means we need to be more deliberate with the calculations. Any
+errors won't be compensated for. If the smooth control is not consistent enough,
+sensors can be used to correct the motion.
+
+![](images/open.jpg)
+
+In short, we want to design a **trajectory generator**, where the input is a
+spline, and the output is wheel velocites.
