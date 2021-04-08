@@ -43,3 +43,7 @@ defaults:
     values:
       grand_parent: Programming
       author: Theo Lemay
+  - scope:
+      path: "pages/programming"
+    values:
+      author: Theo Lemay

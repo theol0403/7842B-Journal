@@ -4,10 +4,12 @@ permalink: programming/intake
 parent: Programming
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 2
 ---
 
 # Intake Automation
+
+{% if page.author %} <span class="author">{{ page.author}}</span> {% endif %}
 
 One of my main roles as programmer is to design and implement robot automation
 and interaction with driver controls.
