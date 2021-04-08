@@ -31,6 +31,10 @@ a:not([class]):hover {
   );
 }
 
+.h_iframe iframe {
+  width: 100%;
+}
+
 li.navigation-list-item a {
   color: #fff;
 }

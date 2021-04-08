@@ -9,6 +9,10 @@ project journal on the note-taking app **Notion**. It contains a linked tree of
 information about the project and ideas.
 
 <!-- prettier-ignore-start -->
-[Notion Trajectory Generator Journal](https://www.notion.so/2D-Motion-Profile-4f7f18dbc08644f08ba00d09b592b654){:.btn target="_blank"} 
+[Notion Trajectory Generator Journal 🔗](https://7842b-trajectory-generator.website/){:.btn target="_blank"} 
 
 <!-- prettier-ignore-end -->
+
+<div class="h_iframe">
+ <iframe src="https://7842b-trajectory-generator.website" title="7842B Trajectory Generator Journal" frameborder="0" height=1000></iframe>
+</div>

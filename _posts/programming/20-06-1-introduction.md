@@ -1,5 +1,5 @@
 ---
-title: Introduction to Trajectories
+title: Introduction
 parent: Motion Control
 ---
 
