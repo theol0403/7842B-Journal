@@ -26,7 +26,7 @@ layout: table_wrappers
       </div>
     </div>
     <div class="main-content-wrap js-main-content" tabindex="0">
-      <div class="main-content">
+      <div class="main-content {% if page.style %}{{ page.style }} {% endif %}">
         <div class="page-header js-page-header">
           {% if site.search_enabled != false %}
           <div class="search">

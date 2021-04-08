@@ -2,6 +2,7 @@
 title: Trajectory Journal
 parent: Motion Control
 nav_order: 4
+style: full
 ---
 
 To organize all my thoughts for this very complex project, I have created a
