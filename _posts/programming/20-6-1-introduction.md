@@ -1,6 +1,7 @@
 ---
 title: Introduction
 parent: Motion Control
+nav_order: 1
 ---
 
 <!-- prettier-ignore-start -->
