@@ -102,8 +102,7 @@ We need to design an algorithm that takes a **spline** as an input and outputs
 
 One option is [Pure
 Pursuit]({{ site.url }}{% link _posts/archive/19-11-25-pure-pursuit.md %}), an
-algorithm that uses odometry to project a point along a spline spline for it to
-"seek".
+algorithm that uses odometry to project a point along a spline for it to "seek".
 
 However, since pure pursuit is a closed-loop controller that takes the robot's
 current state, measured by sensors (position, speed), and calculates how the
@@ -112,7 +111,7 @@ above - namely this it is unstable, unpredictable, inconsistent, and not smooth.
 
 ![](images/pure.png)
 
-## Open Loop Control
+### Open Loop Control
 
 What if we made an algorithm that generates wheel velocities for the robot to
 follow exactly:
