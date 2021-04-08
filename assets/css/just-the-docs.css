@@ -1435,6 +1435,8 @@ b, strong { color: #94ddff; }
 
 a:not([class]):hover { background-image: linear-gradient(#94ddff 0%, #94ddff 100%); }
 
+.h_iframe iframe { width: 100%; }
+
 li.navigation-list-item a { color: #fff; }
 
 .menu-button { color: #94ddff; }
