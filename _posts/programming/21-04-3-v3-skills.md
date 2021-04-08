@@ -38,7 +38,7 @@ complex arcs), the more optimal the routine can be.
 
 One possible routine:
 
-![](images/skills-planning-new.png)
+![](images/skills-planning-new.png){: .noshadow}
 
 Where **B** is the start, **E** is the end,
 <span style="color: #f01b44; font-weight: bold">red</span> is translation,
@@ -54,7 +54,7 @@ In this run, there are 11-12 point turns.
 
 Here is a new ambitious plan which only has **4** point turns!
 
-![](images/skills-sensors.png)
+![](images/skills-sensors.png){: .noshadow}
 
 Where <span style="color: #e11720; font-weight: bold">red</span> is forward,
 <span style="color: #135bb5; font-weight: bold">blue</span> is backward,

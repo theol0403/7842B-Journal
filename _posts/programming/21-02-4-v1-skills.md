@@ -14,7 +14,7 @@ feed it lines, effectively turning it into a 1D motion profile.
 
 The current rough plan:
 
-![](images/skills-v1.png)
+![](images/skills-v1.png){: .noshadow}
 
 Where <span style="color: #e11720; font-weight: bold">red</span> is forward,
 <span style="color: #135bb5; font-weight: bold">blue</span> is backward,
