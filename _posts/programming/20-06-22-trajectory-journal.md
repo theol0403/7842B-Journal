@@ -13,6 +13,9 @@ information about the project and ideas.
 
 <!-- prettier-ignore-end -->
 
+It is embedded here, but I recommend using the button above to go to the full
+screen page.
+
 <div class="h_iframe">
  <iframe src="https://7842b-trajectory-generator.website" title="7842B Trajectory Generator Journal" frameborder="0" height=1000></iframe>
 </div>
