@@ -1,10 +1,6 @@
 ---
-title: Motion Control
-permalink: programming/motion
-parent: Programming
-has_children: true
-has_toc: false
-nav_order: 3
+title: Introduction to Trajectories
+parent: Motion Control
 ---
 
 <!-- prettier-ignore-start -->
@@ -237,20 +233,3 @@ The only way to find arc length of any subset of a spline is extremely
 inefficient. It involves moving $$t$$ in very small increments, and measuring
 the distances between each point along the spline. After summing the distances,
 we have the arc length. This takes **seconds** of time.
-
-## Trajectory Generator Journal
-
-Since developing the main idea, I have been journaling and improving the core
-algorithm. Here are my entries:
-
-<h2 class="text-delta">Table of contents</h2>
-
-<ul id="markdown-toc">
-	{% assign posts = site.posts | where: "parent", "Motion Control" %}
-	{% for post in posts %}
-	<li>
-		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a> 
-		- {{ post.date | date: "%B %d, %Y" }}
-	</li>
-	{% endfor %}
-</ul>
