@@ -8,6 +8,8 @@ has_toc: false
 
 # Programming Skills
 
+{% if page.author %} <span class="author">{{ page.author}}</span> {% endif %}
+
 I need to find the best programming skills routine. Considerations:
 
 - point turns are slow and prone to error
