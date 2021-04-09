@@ -22,9 +22,12 @@ bending down the hood to increase compression and lowering the amount of
 elastics on the roller but it wasn't working.
 
 Then we had the idea of taking a slow-mo video of the robot shooting. We saw in
-the video the ball was spinning for a short amount of time at th bottom of the
-hood so it was not getting launched as far as it should so we moved the hole
-hood forward and bent back the hood so it had more compression at the bottom an
-the same at the top.
+the video the ball didn't have enough compression at th bottom of the hood so it
+was not getting launched as far as it should.
+
+To solve this we moved the hole hood forward and bent back the hood so it had
+more compression at the bottom an the same at the top. The reason just bending
+the hood didn't work was that it didn't change the compression at the bottom
+where the problem was
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HAN5MYldAOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
