@@ -1,5 +1,4 @@
 ---
-title: V3 Skills
 parent: Skills
 nav_order: 3
 ---

@@ -1,5 +1,4 @@
 ---
-title: Introduction
 parent: Motion Control
 ---
 

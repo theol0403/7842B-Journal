@@ -1,5 +1,4 @@
 ---
-title: V1 Skills
 parent: Skills
 nav_order: 1
 ---

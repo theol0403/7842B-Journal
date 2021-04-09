@@ -1,5 +1,4 @@
 ---
-title: Intake Log 2
 parent: Intake Automation
 ---
 
