@@ -15,9 +15,10 @@ angles:
 
 <div class="h_iframe">
  <iframe src="https://www.desmos.com/calculator/hoevadrflf" title="Nonlinear Arc Meshing" frameborder="0" height=500 sandbox="allow-same-origin allow-scripts"></iframe>
-</div>
+</div><br>
 
-So, I implemented it into the code.
+So, I added it into the code. The hardest part was finding the 1st and 2nd
+derivative and curvature of the interpolated arc.
 
 ![](images/arc_mesh.png)
 
