@@ -14,7 +14,8 @@ speed to 600Rpm. This made the time to intake and score a lot faster.
 ## Base
 
 We also changed the wheels from 2.75 inch to 3.25 so that we could have higher
-speed to be able to do a full skills run.
+speed to be able to do a full skills run. With the smaller wheels slightly to
+slow for getting a full run.
 
 ![](images/20210408_175148.jpg)
 

@@ -21,7 +21,16 @@ intakes rotate in until they hit the stopper. The stopper is made to be easily
 changed for the right amount of compression on the ball. The intakes run at 200
 rpm.
 
+It uses a mixture of chain and treads with flaps on sprockets to intake the
+balls.
+
 ![](images/20210303_154849.jpg)
+
+The first version of it didn't have the lower sprocket but we added it because
+the roller wasn't low enough to intake balls properly. You can see the intake
+doesn't have the lower roller.
+
+![](images/20210119_190349.jpg)
 
 ## Back Rollers
 
