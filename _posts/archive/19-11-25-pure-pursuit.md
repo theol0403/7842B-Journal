@@ -65,3 +65,24 @@ auto path = SimplePath({odom->getState(), {0_ft, 0_ft}, {0_ft, 4_ft}})
     .smoothen(.001, 1e-10 * meter);
 follower.followPath(PathGenerator::generate(path, limits), false);
 ```
+
+## Update March 16
+
+I worked on pure pursuit a bunch more during lockdown, and implemented a
+holonomic version. It worked quite well, but was somewhat unstable.
+
+### Skid-steer
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TO5lervuoWM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IIqE1pXUOnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Holonomic
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LxWHhvL15-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1VZjhOcGS7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/H-byXF34RJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f-wNr55GLMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
