@@ -69,7 +69,7 @@
   }
   ,"11": {
     "title": "Roller changes",
-    "content": "We changed the middle roller to a bigger size and moved it down because with the new intake design it didn’t bring the ball as high as with the old intake. . . We also made the intake much more secure with more supports and a stronger design. .",
+    "content": "We changed the middle roller to a bigger size and moved it down because with the new intake design it didn’t bring the ball as high as with the old intake. . Since we changed to using flex wheels it doesn’t push the ball as high since the old intakes had flaps that pushed it up more. . . We also made the intake much more secure with more supports and a stronger design. .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-03-26/roller-changes/",
     "relUrl": "/2021-03-26/roller-changes/"
   }
@@ -81,7 +81,7 @@
   }
   ,"13": {
     "title": "Robot V3",
-    "content": "We will be taking V3 to Worlds. We have a bit of time for some larger-scale rebuilding, and then spend time perfecting our autonomous and driving. .",
+    "content": "We will be taking V3 to Worlds. We have a bit of time for some larger-scale rebuilding, and then spend time perfecting our autonomous and driving. . .",
     "url": "https://theol0403.github.io/7842B-Journal/build/v3/",
     "relUrl": "/build/v3/"
   }
@@ -93,7 +93,7 @@
   }
   ,"15": {
     "title": "Upgrades",
-    "content": "Intakes . For the new robot we decided to speed the intakes and shooting up. We made the top roller that shot the ball faster and lowered the amount of compression on the ball. This made it shoot better and not take as much pressure to shoot. We changed it to 1200Rpm. We also increased the rest of the intake and other roller speed to 600Rpm. This made the time to intake and score a lot faster. . Base . We also changed the wheels from 2.75 inch to 3.25 so that we could have higher speed to be able to do a full skills run. . . Intake sensors . Even though the light sensors were very effective at managing the intakes, we needed more information to remove driver work. We replaced both the light sensors with color sensors, which allows us to see the colors of the balls. This can let us add features like “auto poop”, “double shot”, “cycle and hold”, where the robot needs to know which balls are at what roller. . .",
+    "content": "Intakes . For the new robot we decided to speed the intakes and shooting up. We made the top roller that shot the ball faster and lowered the amount of compression on the ball. This made it shoot better and not take as much pressure to shoot. We changed it to 1200Rpm. We also increased the rest of the intake and other roller speed to 600Rpm. This made the time to intake and score a lot faster. . Base . We also changed the wheels from 2.75 inch to 3.25 so that we could have higher speed to be able to do a full skills run. With the smaller wheels slightly to slow for getting a full run. . . Intake sensors . Even though the light sensors were very effective at managing the intakes, we needed more information to remove driver work. We replaced both the light sensors with color sensors, which allows us to see the colors of the balls. This can let us add features like “auto poop”, “double shot”, “cycle and hold”, where the robot needs to know which balls are at what roller. . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-02-28/upgrades/",
     "relUrl": "/2021-02-28/upgrades/"
   }
@@ -105,7 +105,7 @@
   }
   ,"17": {
     "title": "Deflector",
-    "content": "For the new robot we decided to add a deflector that directs the ball into the goal. This majorly helps doing double shots and accuracy of the robot. . .",
+    "content": "For the new robot we decided to add a deflector that directs the ball into the goal. This majorly helps doing double shots and accuracy of the robot. Before we added this the robot had to be very well lined up or there wa a chance the ball would miss. Specifically on the centre goal which doesn’t have a backplate. . .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-02-23/deflector/",
     "relUrl": "/2021-02-23/deflector/"
   }
@@ -129,7 +129,7 @@
   }
   ,"21": {
     "title": "Intake Design",
-    "content": ". Front Intakes | Back Rollers | Intake sensors | Front Intakes . The robot was built so that the intakes could fold out to extend the reach of the robot into the goals. This was done by using nilocks and strand-offs. . Elastics are used to pull the intakes to the front and into position. The intakes rotate in until they hit the stopper. The stopper is made to be easily changed for the right amount of compression on the ball. The intakes run at 200 rpm. . . Back Rollers . The robot has rollers at the back that are spaced apart so that we can get rid of the balls out the back: . . The robot uses 2 motors for the rollers that move up and shoot the balls. Since there are 4 rollers each motor controls 2 rollers. . You can see the 4 rollers in his image: . . However, since our robot gets rid of the wrong-colored balls out the back which means they need to be able to spin opposite directions – either spit out the ball or send it up to score with. Therefore, the back rollers must be on different motors. . So, each one of the back rollers are connected to one of the front rollers but the front and back need to go opposite directions to move the ball up. To run two rollers opposite directions with one motor we made a gearbox to reverse the rotation. . The rollers that move the ball up or out the back run at 200 rpm and the one that shoots them runs at 600 rpm. . Lower reversing gearbox: . . Upper reversing gearbox: . . For shooting we made a 600 rpm roller with a hood made out of lexan and strapping for compression: . . Intake sensors . We knew that we wanted the driver to be able to hold the “intake” button without being worried that the robot will expel balls. Therefore, we attached light sensors to the intake and hood which can detect the presence of a ball. This way, we can automatically turn off the rollers when they are holding a ball. .",
+    "content": ". Front Intakes | Back Rollers | Intake sensors | Front Intakes . The robot was built so that the intakes could fold out to extend the reach of the robot into the goals. This was done by using nilocks and strand-offs. . Elastics are used to pull the intakes to the front and into position. The intakes rotate in until they hit the stopper. The stopper is made to be easily changed for the right amount of compression on the ball. The intakes run at 200 rpm. . It uses a mixture of chain and treads with flaps on sprockets to intake the balls. . . The first version of it didn’t have the lower sprocket but we added it because the roller wasn’t low enough to intake balls properly. You can see the intake doesn’t have the lower roller. . . Back Rollers . The robot has rollers at the back that are spaced apart so that we can get rid of the balls out the back: . . The robot uses 2 motors for the rollers that move up and shoot the balls. Since there are 4 rollers each motor controls 2 rollers. . You can see the 4 rollers in his image: . . However, since our robot gets rid of the wrong-colored balls out the back which means they need to be able to spin opposite directions – either spit out the ball or send it up to score with. Therefore, the back rollers must be on different motors. . So, each one of the back rollers are connected to one of the front rollers but the front and back need to go opposite directions to move the ball up. To run two rollers opposite directions with one motor we made a gearbox to reverse the rotation. . The rollers that move the ball up or out the back run at 200 rpm and the one that shoots them runs at 600 rpm. . Lower reversing gearbox: . . Upper reversing gearbox: . . For shooting we made a 600 rpm roller with a hood made out of lexan and strapping for compression: . . Intake sensors . We knew that we wanted the driver to be able to hold the “intake” button without being worried that the robot will expel balls. Therefore, we attached light sensors to the intake and hood which can detect the presence of a ball. This way, we can automatically turn off the rollers when they are holding a ball. .",
     "url": "https://theol0403.github.io/7842B-Journal/2021-01-20/intakes/",
     "relUrl": "/2021-01-20/intakes/"
   }
