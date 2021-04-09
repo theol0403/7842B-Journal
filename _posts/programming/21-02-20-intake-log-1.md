@@ -1,5 +1,6 @@
 ---
 parent: Intake Automation
+nav_order: 1
 ---
 
 I need to design a controller for the intakes.

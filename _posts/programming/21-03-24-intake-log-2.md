@@ -1,5 +1,6 @@
 ---
 parent: Intake Automation
+nav_order: 2
 ---
 
 <!-- prettier-ignore-start -->
