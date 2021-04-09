@@ -14,7 +14,7 @@ the simplicity of an arc with the versatility of specifying start and end
 angles:
 
 <div class="h_iframe">
- <iframe src="https://www.desmos.com/calculator/hoevadrflf" title="Nonlinear Arc Meshing" frameborder="0" height=500></iframe>
+ <iframe src="https://www.desmos.com/calculator/hoevadrflf" title="Nonlinear Arc Meshing" frameborder="0" height=500 sandbox="allow-same-origin allow-scripts"></iframe>
 </div>
 
 So, I implemented it into the code.
