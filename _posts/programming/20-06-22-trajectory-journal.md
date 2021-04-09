@@ -1,5 +1,4 @@
 ---
-title: Trajectory Journal
 parent: Motion Control
 nav_order: 4
 style: full
