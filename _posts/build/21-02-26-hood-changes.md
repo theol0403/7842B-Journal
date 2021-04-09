@@ -26,3 +26,5 @@ the video the ball was spinning for a short amount of time at th bottom of the
 hood so it was not getting launched as far as it should so we moved the hole
 hood forward and bent back the hood so it had more compression at the bottom an
 the same at the top.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HAN5MYldAOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
