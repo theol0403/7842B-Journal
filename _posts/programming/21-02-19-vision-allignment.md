@@ -3,6 +3,14 @@ parent: Motion Control
 nav_order: 6
 ---
 
+<!-- prettier-ignore-start -->
+## Table of contents
+{: .no_toc .text-delta }
+1. TOC 
+{:toc}
+
+<!-- prettier-ignore-end -->
+
 ## Motivation
 
 Even though V1 skills worked decently well, the greatest point of failure was
