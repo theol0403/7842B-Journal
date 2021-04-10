@@ -22,7 +22,7 @@ This is a joint digital journal, with sections for building and programming.
 [Programming Journal]({{site.url}}/programming){: .btn }
 [Build Journal]({{site.url}}/build){: .btn }
 
-![]({{site.url}}/assets/images/20210330_162158.jpg){:height="50%" width="50%"}
+![]({{site.url}}/assets/images/newimg.jpg){:height="60%" width="60%"}
 
 ## Archive
 
