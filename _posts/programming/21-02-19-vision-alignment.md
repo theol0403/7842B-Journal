@@ -70,6 +70,8 @@ to gently correct the motion.
 
 It works great on the robot!
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mCGwi4Xn0Vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Update Feb 24
 
 At the competition, it worked very well! The robot was able to much more
