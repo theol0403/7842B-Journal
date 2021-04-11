@@ -47,3 +47,5 @@ defaults:
       path: "pages/programming"
     values:
       author: Theo Lemay
+
+ga_tracking: G-69Q8K7ZNQQ
