@@ -49,3 +49,6 @@ defaults:
       author: Theo Lemay
 
 ga_tracking: G-69Q8K7ZNQQ
+
+plugins:
+  - jekyll-seo-tag

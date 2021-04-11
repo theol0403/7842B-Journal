@@ -7,13 +7,6 @@
   <meta http-equiv="expires" content="0" />
   <meta http-equiv="pragma" content="no-cache" />
 
-  {% if site.plugins.jekyll-seo == nil %}
-  <title>{{ page.title }} - {{ site.title }}</title>
-
-  {% if page.description %}
-  <meta name="Description" content="{{ page.description }}" />
-  {% endif %} {% endif %}
-
   <link
     rel="shortcut icon"
     href="{{ '/assets/images/favicon.ico' | absolute_url }}"
