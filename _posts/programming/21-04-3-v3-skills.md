@@ -12,7 +12,7 @@ nav_order: 3
 <!-- prettier-ignore-end -->
 
 Previously, our routine was only designed to score a maximum of 122 points (out
-of 126), purposefully excluding 4 of the balls. It looked something like this:
+of 126), purposefully excluding 4 of the balls.
 
 We are only slightly under time, so in order to get the last 4 balls, something
 needs to be different. Simply modifying the current routine to grab the last 4
