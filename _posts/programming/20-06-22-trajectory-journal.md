@@ -9,7 +9,7 @@ project journal on the note-taking app **Notion**. It contains a linked tree of
 information about the project and ideas.
 
 <!-- prettier-ignore-start -->
-[Notion Trajectory Generator Journal 🔗](https://7842b-trajectory-generator.website/){:.btn target="_blank"} 
+[Notion Trajectory Generator Journal 🔗](lucky-bush-4c9b.theol0403.workers.dev){:.btn target="_blank"} 
 
 <!-- prettier-ignore-end -->
 
@@ -17,5 +17,5 @@ It is embedded here, but I recommend using the button above to go to the full
 screen page.
 
 <div class="h_iframe">
- <iframe src="https://7842b-trajectory-generator.website" title="7842B Trajectory Generator Journal" frameborder="0" height=1000></iframe>
+ <iframe src="lucky-bush-4c9b.theol0403.workers.dev" title="7842B Trajectory Generator Journal" frameborder="0" height=1000></iframe>
 </div>
